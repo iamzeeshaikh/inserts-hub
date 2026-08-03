@@ -24,6 +24,19 @@ fs.mkdirSync(REPORTS, { recursive: true });
 const XML = path.join(SRC, 'insertshub.WordPress.2026-08-03.xml');
 const CSV = path.join(SRC, 'wc-product-export-3-8-2026-1785752420949.csv');
 
+/**
+ * The business phone number changed after the export was taken. It is rewritten
+ * everywhere — site config, page copy, tel: links — so no old number survives
+ * anywhere in the build. `npm run validate` fails if one reappears.
+ */
+const PHONE = { display: '(503) 358-0443', href: '+15033580443' };
+const OLD_PHONE = /(?:\+?1[-\s.]?)?\(?929\)?[-\s.]?2141[-\s.]?874\b|\+19292141874\b/g;
+
+const replacePhone = (html) =>
+  String(html || '')
+    .replace(/href="tel:[^"]*"/g, `href="tel:${PHONE.href}"`)
+    .replace(OLD_PHONE, PHONE.display);
+
 const items = readWxr(XML);
 const wooRows = readCsv(CSV);
 const byId = new Map(items.map((i) => [i.id, i]));
@@ -77,10 +90,10 @@ for (const row of wooRows) {
 
   const linkPolicy = makeLinkPolicy(url, contamination, linkRows, `/product/${slug}/`);
 
-  const shortHtml = sanitizeHtml(wpautop(row['Short description']), { linkPolicy });
-  const descHtml = enforceOneLinkPerParagraph(
-    sanitizeHtml(wpautop(row.Description), { linkPolicy }), url, linkRows);
-  const specsHtml = sanitizeHtml(wpautop(row['Meta: _bhww_specifications_wysiwyg']), { linkPolicy });
+  const shortHtml = replacePhone(sanitizeHtml(wpautop(row['Short description']), { linkPolicy }));
+  const descHtml = replacePhone(enforceOneLinkPerParagraph(
+    sanitizeHtml(wpautop(row.Description), { linkPolicy }), url, linkRows));
+  const specsHtml = replacePhone(sanitizeHtml(wpautop(row['Meta: _bhww_specifications_wysiwyg']), { linkPolicy }));
   const faqs = parseFaqs(row['Meta: _bhww_faqs_wysiwyg'], linkPolicy);
 
   const images = (row.Images || '').split(',').map((s) => s.trim()).filter(Boolean);
@@ -293,6 +306,7 @@ for (const def of PAGE_DEFS) {
   if (!wp) throw new Error(`missing page ${def.id}`);
   const linkPolicy = makeLinkPolicy(def.url, contamination, linkRows, def.url);
   let body = extractPageBody(wp.content, def);
+  body = replacePhone(body);
   body = sanitizeHtml(body, { linkPolicy });
   body = enforceOneLinkPerParagraph(body, def.url, linkRows);
   pages.push({ ...def, bodyHtml: body });
@@ -334,8 +348,8 @@ const site = {
   name: 'Inserts Hub',
   tagline: 'FIT. PROTECT. DELIVER.',
   email: 'info@insertshub.com',
-  phone: '+1-929-2141-874',
-  phoneHref: '+19292141874',
+  phone: PHONE.display,
+  phoneHref: PHONE.href,
   address: { street: '3409 N 7th Ave Unit #529', locality: 'Phoenix', region: 'AZ', postalCode: '85013', country: 'US' },
   addressLine: '3409 N 7th Ave Unit #529 Phoenix, AZ 85013',
   social: { facebook: 'https://www.facebook.com/insertshub/', linkedin: 'https://www.linkedin.com/company/105388524/' },

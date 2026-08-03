@@ -73,6 +73,6 @@ bytes that ship. Any failed check exits non-zero and blocks deployment.
 
 ## Media
 
-134 images migrated, all first-party, all verified by magic bytes and decode
+135 images migrated, all first-party, all verified by magic bytes and decode
 test. Served through Astro's image pipeline as responsive WebP with explicit
 dimensions; below-the-fold images are lazy-loaded.

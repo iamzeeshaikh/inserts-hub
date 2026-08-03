@@ -97,8 +97,12 @@ const MALWARE_STRINGS = [
 ];
 const WP_STRINGS = ['<?php', 'base64_decode', 'gzinflate', 'str_rot13', 'shell_exec', 'passthru(', 'wp-content', 'wp-includes', 'elementor-widget', 'woocommerce-page'];
 
+/** The previous business number, retired in favour of (503) 358-0443. */
+const RETIRED_PHONE = /(?:\+?1[-\s.]?)?\(?929\)?[-\s.]?2141[-\s.]?874\b|\+19292141874\b/i;
+
 for (const doc of docs) {
   const lower = doc.html.toLowerCase();
+  if (RETIRED_PHONE.test(doc.html)) fail(`${doc.route}: retired phone number still present`);
   for (const s of MALWARE_STRINGS) if (lower.includes(s.toLowerCase())) fail(`${doc.route}: malware/cross-site string present → ${s}`);
   for (const s of WP_STRINGS) if (lower.includes(s.toLowerCase())) fail(`${doc.route}: WordPress artefact present → ${s}`);
   if (/position\s*:\s*absolute[^;]*;?\s*(left|top)\s*:\s*-\d{3,}/i.test(doc.html)) {
