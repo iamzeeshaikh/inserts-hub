@@ -364,20 +364,6 @@ const site = {
     { title: 'High Quality Offset Printing', image: '/images/site/Offset-Press.gif', tint: false },
     { title: 'Fast Shipping 8-10 Business Days', image: '/images/site/Delivery-Icon-Giff.gif', tint: false },
   ],
-  slides: [
-    { h1: true, heading: 'Custom Inserts for Every Need',
-      text: 'From foam inserts to cardboard dividers, find the perfect fit for all your packaging requirements at wholesale prices.',
-      cta: { label: 'Shop Now', href: '/products/' },
-      image: '/images/site/Corrugated-Cardboard-Inserts-Packaging.webp' },
-    { heading: 'Bulk Orders, Big Savings',
-      text: 'Buy custom inserts in bulk and save on premium quality packaging solutions for your business',
-      cta: { label: 'Get a Quote', href: '#quote' },
-      image: '/images/site/Mini-Cupcake-Inserts.webp' },
-    { heading: 'Secure Your Products with Precision',
-      text: 'Explore our range of inserts designed to protect and display your products beautifully. Custom options available!',
-      cta: { label: 'Explore Our Collection', href: '/products/' },
-      image: '/images/site/Cardboard-Divider-Inserts-Packaging.webp' },
-  ],
   homeOrder: ['white-cardboard-inserts', 'kraft-cardboard-inserts', 'rigid-box-cardboard-inserts',
     'cardboard-box-divider-inserts', 'die-cut-cardboard-inserts', 'corrugated-inserts',
     'molded-pulp-inserts', 'custom-boxes-with-foam-inserts', 'carton-inserts',
@@ -414,7 +400,6 @@ for (const p of products) {
     manifest.push({ remote, local: p.images[i], page: p.url, alt: p.imageAlts[i], role: i === 0 ? 'primary' : 'gallery' });
   });
 }
-for (const s of site.slides) manifest.push({ remote: siteImage(s.image), local: s.image, page: '/', alt: s.heading, role: 'slide' });
 for (const f of site.homeFeatures) manifest.push({ remote: siteImage(f.image), local: f.image, page: '/', alt: f.title, role: 'feature' });
 manifest.push({ remote: 'https://insertshub.com/wp-content/uploads/2024/10/Inserts-Hub-500-x-300.png', local: '/images/site/Inserts-Hub-logo.png', page: 'header', alt: 'Inserts Hub — fit, protect, deliver', role: 'logo' });
 manifest.push({ remote: 'https://insertshub.com/wp-content/uploads/2024/10/certificate.png', local: '/images/site/certificate.png', page: 'footer', alt: 'DMCA Protected, SiteLock secure, McAfee secure and BBB accredited business badges', role: 'badge' });
@@ -423,8 +408,7 @@ manifest.push({ remote: 'https://insertshub.com/wp-content/uploads/2024/10/cropp
 function siteImage(local) {
   const f = local.split('/').pop();
   const map = {
-    'Corrugated-Cardboard-Inserts-Packaging.webp': '2024/10', 'Mini-Cupcake-Inserts.webp': '2024/10',
-    'Cardboard-Divider-Inserts-Packaging.webp': '2024/10', 'boxes-gif-unscreen.gif': '2024/08',
+    'boxes-gif-unscreen.gif': '2024/08',
     'gif-boxes.gif': '2024/08', 'Offset-Press.gif': '2024/08', 'Delivery-Icon-Giff.gif': '2024/08',
   };
   return `https://insertshub.com/wp-content/uploads/${map[f]}/${f}`;

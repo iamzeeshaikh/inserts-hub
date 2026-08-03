@@ -1,9 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import { site } from '../lib/site';
+import { site, products } from '../lib/site';
 import Icon from './Icon.astro';
 import logo from '../assets/site/Inserts-Hub-logo.png';
 
+const searchIndex = products.map((p) => ({ name: p.name, url: p.url }));
 const current = Astro.url.pathname;
 const isCurrent = (href: string) => (href === current ? 'page' : undefined);
 ---
@@ -11,6 +12,16 @@ const isCurrent = (href: string) => (href === current ? 'page' : undefined);
   <div class="topbar">
     <div class="wrap topbar__inner">
       <div class="topbar__social">
+        <button
+          type="button"
+          class="topbar__search-toggle"
+          aria-expanded="false"
+          aria-controls="site-search"
+          data-search-toggle
+        >
+          <Icon name="search" size={17} />
+          <span class="visually-hidden">Search products</span>
+        </button>
         <a href={site.social.facebook} target="_blank" rel="noopener noreferrer">
           <Icon name="facebook" size={17} />
           <span class="visually-hidden">Inserts Hub on Facebook</span>
@@ -33,6 +44,21 @@ const isCurrent = (href: string) => (href === current ? 'page' : undefined);
       </div>
 
       <a class="btn btn--ghost" href="/contact-us/">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="search-panel" id="site-search" hidden>
+    <div class="wrap">
+      <label class="visually-hidden" for="site-search-input">Search products</label>
+      <input
+        id="site-search-input"
+        type="search"
+        placeholder="Search products…"
+        autocomplete="off"
+        data-search-input
+      />
+      <ul class="search-panel__results" role="list" data-search-results></ul>
+      <p class="search-panel__empty" hidden data-search-empty>No products match that search.</p>
     </div>
   </div>
 
@@ -78,9 +104,63 @@ const isCurrent = (href: string) => (href === current ? 'page' : undefined);
       </ul>
     </div>
   </nav>
+  <script id="search-index" type="application/json" is:inline set:html={JSON.stringify(searchIndex)} />
 </header>
 
 <script>
+  /**
+   * Header search. The old site used a WordPress search form; with 31 products
+   * a client-side filter over names supplied at build time is equivalent, needs
+   * no query-string URL and adds no crawlable duplicate page.
+   */
+  const searchToggle = document.querySelector<HTMLButtonElement>('[data-search-toggle]');
+  const searchPanel = document.getElementById('site-search');
+  const searchInput = document.querySelector<HTMLInputElement>('[data-search-input]');
+  const searchResults = document.querySelector<HTMLUListElement>('[data-search-results]');
+  const searchEmpty = document.querySelector<HTMLElement>('[data-search-empty]');
+
+  if (searchToggle && searchPanel && searchInput && searchResults && searchEmpty) {
+    const index: Array<{ name: string; url: string }> =
+      JSON.parse(document.getElementById('search-index')?.textContent || '[]');
+
+    const render = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      searchResults.replaceChildren();
+      if (!query) {
+        searchEmpty.hidden = true;
+        return;
+      }
+      const matches = index.filter((item) => item.name.toLowerCase().includes(query)).slice(0, 8);
+      for (const match of matches) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = match.url;
+        a.textContent = match.name;
+        li.append(a);
+        searchResults.append(li);
+      }
+      searchEmpty.hidden = matches.length > 0;
+    };
+
+    const setSearchOpen = (open: boolean) => {
+      searchToggle.setAttribute('aria-expanded', String(open));
+      searchPanel.toggleAttribute('hidden', !open);
+      if (open) searchInput.focus();
+      else { searchInput.value = ''; render(); }
+    };
+
+    searchToggle.addEventListener('click', () => {
+      setSearchOpen(searchToggle.getAttribute('aria-expanded') !== 'true');
+    });
+    searchInput.addEventListener('input', render);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && searchToggle.getAttribute('aria-expanded') === 'true') {
+        setSearchOpen(false);
+        searchToggle.focus();
+      }
+    });
+  }
+
   const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
   const panel = document.getElementById('mobile-nav');
   if (toggle && panel) {

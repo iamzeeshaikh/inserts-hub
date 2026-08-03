@@ -92,36 +92,6 @@
    "tint": false
   }
  ],
- "slides": [
-  {
-   "h1": true,
-   "heading": "Custom Inserts for Every Need",
-   "text": "From foam inserts to cardboard dividers, find the perfect fit for all your packaging requirements at wholesale prices.",
-   "cta": {
-    "label": "Shop Now",
-    "href": "/products/"
-   },
-   "image": "/images/site/Corrugated-Cardboard-Inserts-Packaging.webp"
-  },
-  {
-   "heading": "Bulk Orders, Big Savings",
-   "text": "Buy custom inserts in bulk and save on premium quality packaging solutions for your business",
-   "cta": {
-    "label": "Get a Quote",
-    "href": "#quote"
-   },
-   "image": "/images/site/Mini-Cupcake-Inserts.webp"
-  },
-  {
-   "heading": "Secure Your Products with Precision",
-   "text": "Explore our range of inserts designed to protect and display your products beautifully. Custom options available!",
-   "cta": {
-    "label": "Explore Our Collection",
-    "href": "/products/"
-   },
-   "image": "/images/site/Cardboard-Divider-Inserts-Packaging.webp"
-  }
- ],
  "homeOrder": [
   "white-cardboard-inserts",
   "kraft-cardboard-inserts",

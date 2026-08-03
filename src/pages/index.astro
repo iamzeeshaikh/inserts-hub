@@ -1,14 +1,20 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductGrid from '../components/ProductGrid.astro';
 import InquiryForm from '../components/InquiryForm.astro';
 import CTASection from '../components/CTASection.astro';
 import { site, homeProducts } from '../lib/site';
-import { asset } from '../lib/images';
 import { organization, website, collectionPage } from '../lib/schema';
 
-const slides = site.slides.map((s) => ({ ...s, asset: asset(s.image) }));
+/**
+ * Section order matches the live page and the PDF capture exactly: four feature
+ * cards straight under the navigation, the blue range button, then the product
+ * grid with the enquiry form beside it, then the quote CTA.
+ *
+ * The live page renders no <h1> at all. Rather than invent a headline or
+ * restructure the layout to fit one, the required single <h1> is visually
+ * hidden and carries the page's own subject — see MIGRATION_CONFLICTS.md.
+ */
 ---
 <BaseLayout
   title="Custom Inserts | Foam, Cardboard & More - Inserts Hub"
@@ -16,50 +22,31 @@ const slides = site.slides.map((s) => ({ ...s, asset: asset(s.image) }));
   path="/"
   schema={[organization(), website(), collectionPage('/', 'Inserts Hub', 'Custom packaging inserts at wholesale prices.', homeProducts)]}
 >
-  <section class="hero" aria-label="Featured">
-    <div class="wrap">
-      {slides.map((slide, i) => (
-        <div class="hero__slide" hidden={i !== 0} data-slide={i}>
-          <div class="hero__copy">
-            {slide.h1
-              ? <h1>{slide.heading}</h1>
-              : <h2>{slide.heading}</h2>}
-            <p>{slide.text}</p>
-            <a class="btn btn--red" href={slide.cta.href}>{slide.cta.label}</a>
-          </div>
-          <div class="hero__media">
-            <Image
-              src={slide.asset}
-              alt={slide.heading}
-              width={520}
-              height={520}
-              densities={[1, 2]}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              fetchpriority={i === 0 ? 'high' : undefined}
-              decoding={i === 0 ? 'sync' : 'async'}
-            />
-          </div>
-        </div>
-      ))}
-    </div>
-    <div class="hero__dots" role="tablist" aria-label="Choose a featured slide">
-      {slides.map((slide, i) => (
-        <button
-          type="button"
-          role="tab"
-          data-dot={i}
-          aria-current={i === 0 ? 'true' : 'false'}
-          aria-label={slide.heading}
-        ></button>
-      ))}
-    </div>
-  </section>
+  <!-- First feature card is the LCP element; fetch it alongside the stylesheet. -->
+  <link
+    rel="preload"
+    as="image"
+    href={site.homeFeatures[0].image.replace(/\.gif$/, '.webp')}
+    type="image/webp"
+    slot="head"
+  />
+  <h1 class="visually-hidden">Custom packaging inserts at wholesale prices</h1>
 
   <div class="wrap">
     <ul class="features" role="list">
-      {site.homeFeatures.map((f) => (
+      {site.homeFeatures.map((f, i) => (
         <li class={f.tint ? 'feature feature--tint' : 'feature'}>
-          <img src={f.image} alt="" width="190" height="143" loading="lazy" decoding="async" />
+          <picture>
+            <source srcset={f.image.replace(/\.gif$/, '.webp')} type="image/webp" />
+            <img
+              src={f.image}
+              alt=""
+              width="190"
+              height="143"
+              loading={i < 2 ? 'eager' : 'lazy'}
+              decoding={i < 2 ? 'sync' : 'async'}
+            />
+          </picture>
           <h2>{f.title}</h2>
         </li>
       ))}
@@ -72,13 +59,10 @@ const slides = site.slides.map((s) => ({ ...s, asset: asset(s.image) }));
     </p>
 
     <div class="home-body">
-      <div>
-        <h2 class="visually-hidden">Our custom packaging inserts</h2>
-        <ProductGrid products={homeProducts} eagerCount={3} headingLevel={3} />
-      </div>
+      <ProductGrid products={homeProducts} eagerCount={3} />
       <aside class="home-aside" aria-labelledby="home-enquiry-heading">
         <div class="aside-form">
-          <h2 id="home-enquiry-heading">Request a quote</h2>
+          <h2 id="home-enquiry-heading" class="visually-hidden">Request a quote</h2>
           <InquiryForm variant="aside" id="home-aside" />
         </div>
       </aside>
@@ -87,14 +71,3 @@ const slides = site.slides.map((s) => ({ ...s, asset: asset(s.image) }));
 
   <CTASection />
 </BaseLayout>
-
-<script>
-  const slides = document.querySelectorAll<HTMLElement>('[data-slide]');
-  const dots = document.querySelectorAll<HTMLButtonElement>('[data-dot]');
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      slides.forEach((slide, i) => slide.toggleAttribute('hidden', i !== index));
-      dots.forEach((d, i) => d.setAttribute('aria-current', String(i === index)));
-    });
-  });
-</script>

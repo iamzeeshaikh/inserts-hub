@@ -2,7 +2,12 @@
 import { products } from '../lib/site';
 
 interface Props {
-  /** `quote` is the wide three-column CTA form; `aside` is the compact sidebar form. */
+  /**
+   * `quote` is the wide three-column CTA block with visible labels.
+   * `aside` is the compact sidebar form, which the live site renders with
+   * placeholders only — its labels are present but visually hidden so the
+   * design matches while remaining usable with a screen reader.
+   */
   variant: 'quote' | 'aside';
   /** Product preselected in the dropdown, preserved from the page the visitor is on. */
   productName?: string;
@@ -10,6 +15,7 @@ interface Props {
 }
 const { variant, productName, id } = Astro.props;
 const isQuote = variant === 'quote';
+const labelClass = isQuote ? '' : 'visually-hidden';
 const names = products.map((p) => p.name).sort((a, b) => a.localeCompare(b));
 ---
 <form
@@ -28,25 +34,48 @@ const names = products.map((p) => p.name).sort((a, b) => a.localeCompare(b));
   </div>
   <input type="hidden" name="source_page" value={Astro.url.pathname} />
   <input type="hidden" name="form_variant" value={variant} />
-  <input type="hidden" name="rendered_at" value={String(Date.now())} />
 
   <div class="field">
-    <label for={`${id}-name`}>Your Name <span class="req" aria-hidden="true">*</span></label>
-    <input id={`${id}-name`} name="name" type="text" required autocomplete="name" maxlength="120" />
+    <label class={labelClass} for={`${id}-name`}>
+      {isQuote ? <>Your Name <span class="req" aria-hidden="true">*</span></> : 'Your name'}
+    </label>
+    <input
+      id={`${id}-name`}
+      name="name"
+      type="text"
+      required
+      autocomplete="name"
+      maxlength="120"
+      placeholder={isQuote ? undefined : 'Name'}
+    />
   </div>
 
-  <div class="field">
-    <label for={`${id}-phone`}>Your Phone <span class="req" aria-hidden="true">*</span></label>
-    <input id={`${id}-phone`} name="phone" type="tel" required autocomplete="tel" maxlength="40" />
-  </div>
+  {isQuote ? (
+    <div class="field">
+      <label for={`${id}-phone`}>Your Phone <span class="req" aria-hidden="true">*</span></label>
+      <input id={`${id}-phone`} name="phone" type="tel" required autocomplete="tel" maxlength="40" />
+    </div>
+  ) : (
+    <div class="field">
+      <label class="visually-hidden" for={`${id}-email`}>Your email</label>
+      <input id={`${id}-email`} name="email" type="email" required autocomplete="email" maxlength="160" placeholder="Email" />
+    </div>
+  )}
 
-  <div class="field">
-    <label for={`${id}-email`}>Your Email <span class="req" aria-hidden="true">*</span></label>
-    <input id={`${id}-email`} name="email" type="email" required autocomplete="email" maxlength="160" />
-  </div>
+  {isQuote ? (
+    <div class="field">
+      <label for={`${id}-email`}>Your Email <span class="req" aria-hidden="true">*</span></label>
+      <input id={`${id}-email`} name="email" type="email" required autocomplete="email" maxlength="160" />
+    </div>
+  ) : (
+    <div class="field">
+      <label class="visually-hidden" for={`${id}-phone`}>Your phone</label>
+      <input id={`${id}-phone`} name="phone" type="tel" required autocomplete="tel" maxlength="40" placeholder="Phone" />
+    </div>
+  )}
 
   <div class={isQuote ? 'field span-2' : 'field'}>
-    <label for={`${id}-product`}>Select Product</label>
+    <label class={labelClass} for={`${id}-product`}>Select Product</label>
     <select id={`${id}-product`} name="product">
       {names.map((n) => (
         <option value={n} selected={n === productName}>{n}</option>
@@ -55,10 +84,12 @@ const names = products.map((p) => p.name).sort((a, b) => a.localeCompare(b));
     </select>
   </div>
 
-  <div class="field">
-    <label for={`${id}-quantity`}>Order Quantity</label>
-    <input id={`${id}-quantity`} name="quantity" type="text" inputmode="numeric" maxlength="40" placeholder="Order Quantity" />
-  </div>
+  {isQuote && (
+    <div class="field">
+      <label for={`${id}-quantity`}>Order Quantity</label>
+      <input id={`${id}-quantity`} name="quantity" type="text" inputmode="numeric" maxlength="40" placeholder="Order Quantity" />
+    </div>
+  )}
 
   {isQuote && (
     <div class="field span-3">
@@ -68,12 +99,18 @@ const names = products.map((p) => p.name).sort((a, b) => a.localeCompare(b));
   )}
 
   <div class={isQuote ? 'field span-3' : 'field'}>
-    <label for={`${id}-message`}>Message/Additional Details</label>
-    <textarea id={`${id}-message`} name="message" rows="5" maxlength="4000" placeholder="Write A Message"></textarea>
+    <label class={labelClass} for={`${id}-message`}>Message/Additional Details</label>
+    <textarea
+      id={`${id}-message`}
+      name="message"
+      rows={isQuote ? 5 : 4}
+      maxlength="4000"
+      placeholder={isQuote ? 'Write A Message' : 'Message'}
+    ></textarea>
   </div>
 
   <div class={isQuote ? 'field span-3' : 'field'}>
-    <label for={`${id}-artwork`}>Artwork (optional)</label>
+    <label class={labelClass} for={`${id}-artwork`}>Artwork (optional)</label>
     <input
       id={`${id}-artwork`}
       name="artwork"
@@ -81,12 +118,12 @@ const names = products.map((p) => p.name).sort((a, b) => a.localeCompare(b));
       accept=".pdf,.png,.jpg,.jpeg,.webp,.ai,.eps"
       aria-describedby={`${id}-artwork-help`}
     />
-    <small id={`${id}-artwork-help`}>PDF, PNG, JPG, WebP, AI or EPS. Maximum 8&nbsp;MB.</small>
+    <small id={`${id}-artwork-help`} class={labelClass}>PDF, PNG, JPG, WebP, AI or EPS. Maximum 8&nbsp;MB.</small>
   </div>
 
-  <div class={isQuote ? 'span-3' : ''}>
-    <button class={isQuote ? 'btn btn--red' : 'btn btn--red'} type="submit" data-submit>
-      {isQuote ? 'Request a Quote' : 'Submit'}
+  <div class={isQuote ? 'span-3' : 'form__submit'}>
+    <button class="btn btn--red" type="submit" data-submit>
+      {isQuote ? 'Request A Quote' : 'Submit'}
     </button>
   </div>
 
