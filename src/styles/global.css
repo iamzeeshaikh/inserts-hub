@@ -335,7 +335,7 @@ a:hover { color: var(--blue-light); }
   height: 110px;
   object-fit: contain;
 }
-.feature h3 { font-size: 0.95rem; margin: 14px 0 0; }
+.feature h2 { font-size: 0.95rem; margin: 14px 0 0; }
 
 @media (max-width: 860px) { .features { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 420px) { .features { grid-template-columns: minmax(0, 1fr); } }
@@ -385,6 +385,7 @@ a:hover { color: var(--blue-light); }
 .card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card__body { display: flex; flex: 1; text-align: center; }
 .card__title { margin: 0; font-size: 0.95rem; font-weight: 600; width: 100%; }
+.grid .card__title { font-size: 0.95rem; }
 /* The title link fills the card footer so the whole area is one tap target. */
 .card__title a {
   display: flex;

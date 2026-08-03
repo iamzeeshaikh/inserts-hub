@@ -3,8 +3,14 @@ import { Image } from 'astro:assets';
 import { asset } from '../lib/images';
 import type { Product } from '../lib/site';
 
-interface Props { product: Product; eager?: boolean }
-const { product, eager = false } = Astro.props;
+interface Props {
+  product: Product;
+  eager?: boolean;
+  /** Depends on whether the surrounding section already has its own heading. */
+  headingLevel?: 2 | 3;
+}
+const { product, eager = false, headingLevel = 2 } = Astro.props;
+const Heading = `h${headingLevel}` as 'h2' | 'h3';
 const img = asset(product.images[0]);
 ---
 <article class="card">
@@ -20,6 +26,6 @@ const img = asset(product.images[0]);
     />
   </a>
   <div class="card__body">
-    <h3 class="card__title"><a href={product.url}>{product.name}</a></h3>
+    <Heading class="card__title"><a href={product.url}>{product.name}</a></Heading>
   </div>
 </article>

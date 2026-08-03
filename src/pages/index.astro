@@ -60,7 +60,7 @@ const slides = site.slides.map((s) => ({ ...s, asset: asset(s.image) }));
       {site.homeFeatures.map((f) => (
         <li class={f.tint ? 'feature feature--tint' : 'feature'}>
           <img src={f.image} alt="" width="190" height="143" loading="lazy" decoding="async" />
-          <h3>{f.title}</h3>
+          <h2>{f.title}</h2>
         </li>
       ))}
     </ul>
@@ -74,7 +74,7 @@ const slides = site.slides.map((s) => ({ ...s, asset: asset(s.image) }));
     <div class="home-body">
       <div>
         <h2 class="visually-hidden">Our custom packaging inserts</h2>
-        <ProductGrid products={homeProducts} eagerCount={3} />
+        <ProductGrid products={homeProducts} eagerCount={3} headingLevel={3} />
       </div>
       <aside class="home-aside" aria-labelledby="home-enquiry-heading">
         <div class="aside-form">

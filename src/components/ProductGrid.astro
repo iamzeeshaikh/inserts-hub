@@ -2,11 +2,17 @@
 import ProductCard from './ProductCard.astro';
 import type { Product } from '../lib/site';
 
-interface Props { products: Product[]; columns?: 3 | 4; eagerCount?: number }
-const { products, columns = 3, eagerCount = 3 } = Astro.props;
+interface Props {
+  products: Product[];
+  columns?: 3 | 4;
+  eagerCount?: number;
+  /** Pass 3 when the enclosing section already provides an <h2>. */
+  headingLevel?: 2 | 3;
+}
+const { products, columns = 3, eagerCount = 3, headingLevel = 2 } = Astro.props;
 ---
 <ul class={columns === 4 ? 'grid grid--4' : 'grid'} role="list">
   {products.map((p, i) => (
-    <li><ProductCard product={p} eager={i < eagerCount} /></li>
+    <li><ProductCard product={p} eager={i < eagerCount} headingLevel={headingLevel} /></li>
   ))}
 </ul>
