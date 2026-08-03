@@ -6,11 +6,34 @@
 | **Scope** | `iamzeeshaikhs-projects` |
 | **Preview / test URL** | https://inserts-hub.vercel.app |
 | **Production URL after cutover** | https://insertshub.com |
-| **Indexable right now?** | **No** — `noindex,nofollow` + `robots.txt: Disallow: /` |
-| **DNS changed?** | **No.** Cloudflare has not been touched. |
+| **Status** | **LIVE on insertshub.com** since 3 Aug 2026 |
+| **Indexable?** | **Yes** — `index,follow`, `SITE_LIVE=true` set on Production |
+| **DNS changed?** | **No.** Cloudflare was never touched — see below. |
 | **Repository** | Local git in `insertshub-astro/`, 4 commits, no remote configured |
 
 ---
+
+## How cutover happened
+
+Cloudflare's A records for `insertshub.com` and `www` already pointed at
+**216.150.16.1**, which is one of Vercel's anycast IPs — so the domain was
+resolving to Vercel before this migration began. Adding the two domains to the
+`inserts-hub` project therefore switched the live site over immediately; no DNS
+record was edited by us at any point.
+
+Because the build was still in its default non-indexable state, the production
+domain briefly served `noindex,nofollow`. `SITE_LIVE=true` was set on Production
+and the site redeployed straight away, so the live domain now serves
+`index,follow` with a crawlable `robots.txt`.
+
+Verified live on `https://insertshub.com`:
+
+- All 13 checked routes return 200, including `/products/page/2/` and `/refund_returns/`
+- All 5 retired URLs 301 in a single hop; `/category/*` spam URLs return 410; unknown URLs 404
+- `www.insertshub.com` → `insertshub.com` via a single 308
+- Zero occurrences of `wp-content`, `elementor`, `casino`, `thecandlepackaging`
+  or the retired phone number across the homepage, products, a product page,
+  About and Contact
 
 ## Indexing is opt-in
 
