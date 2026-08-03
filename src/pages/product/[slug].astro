@@ -1,0 +1,129 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductGallery from '../../components/ProductGallery.astro';
+import RichText from '../../components/RichText.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedProducts from '../../components/RelatedProducts.astro';
+import CTASection from '../../components/CTASection.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import { products, categoryBySlug, type Product } from '../../lib/site';
+import { asset } from '../../lib/images';
+import { breadcrumbs, product as productSchema, faqPage } from '../../lib/schema';
+
+export const getStaticPaths: GetStaticPaths = () =>
+  products.map((p) => ({ params: { slug: p.slug }, props: { product: p } }));
+
+const { product } = Astro.props as { product: Product };
+const category = categoryBySlug.get(product.category)!;
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Products', href: '/products/' },
+  { label: category.name, href: `/product-category/${category.slug}/` },
+  { label: product.name },
+];
+
+// Schema images use the optimised asset URLs the page actually renders.
+const imageUrls = product.images.map((src) => asset(src).src);
+---
+<BaseLayout
+  title={product.seoTitle}
+  description={product.seoDescription}
+  path={product.url}
+  ogType="product"
+  ogImage={imageUrls[0]}
+  schema={[breadcrumbs(crumbs), productSchema(product, imageUrls), faqPage(product.faqs)]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <div class="wrap">
+    <div class="product-top">
+      <ProductGallery product={product} />
+
+      <div class="product-summary">
+        <h1>{product.name}</h1>
+        <RichText html={product.shortDescriptionHtml} class="short" />
+        <div class="aside-form">
+          <h2 id="product-enquiry-heading">Request a quote for {product.name}</h2>
+          <InquiryForm variant="aside" productName={product.name} id="product-aside" />
+        </div>
+        <TrustBar />
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="tabs" data-tabs>
+      <ul class="tabs__list" role="tablist" aria-label="Product information">
+        <li role="presentation">
+          <button role="tab" id="tab-description" aria-controls="panel-description" aria-selected="true" type="button">Description</button>
+        </li>
+        {product.specificationsHtml && (
+          <li role="presentation">
+            <button role="tab" id="tab-specifications" aria-controls="panel-specifications" aria-selected="false" type="button">Specifications</button>
+          </li>
+        )}
+        {product.faqs.length > 0 && (
+          <li role="presentation">
+            <button role="tab" id="tab-faqs" aria-controls="panel-faqs" aria-selected="false" type="button">Faqs</button>
+          </li>
+        )}
+      </ul>
+
+      <div class="tabs__panel" id="panel-description" role="tabpanel" aria-labelledby="tab-description">
+        <RichText html={product.descriptionHtml} />
+      </div>
+
+      {product.specificationsHtml && (
+        <div class="tabs__panel" id="panel-specifications" role="tabpanel" aria-labelledby="tab-specifications" hidden>
+          <h2>{product.name} specifications</h2>
+          <RichText html={product.specificationsHtml} />
+        </div>
+      )}
+
+      {product.faqs.length > 0 && (
+        <div class="tabs__panel" id="panel-faqs" role="tabpanel" aria-labelledby="tab-faqs" hidden>
+          <h2 id="faqs-heading">{product.name} FAQs</h2>
+          <FAQSection faqs={product.faqs} />
+        </div>
+      )}
+    </div>
+  </div>
+
+  <RelatedProducts slugs={product.related} />
+
+  <CTASection productName={product.name} />
+</BaseLayout>
+
+<script>
+  // Tabs enhance a page that already renders every panel's content in the HTML,
+  // so the copy is fully present for crawlers and for visitors without JS.
+  for (const group of document.querySelectorAll<HTMLElement>('[data-tabs]')) {
+    const tabs = [...group.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+    const panels = tabs.map((tab) => document.getElementById(tab.getAttribute('aria-controls')!));
+
+    const select = (index: number) => {
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === index));
+        tab.tabIndex = i === index ? 0 : -1;
+        panels[i]?.toggleAttribute('hidden', i !== index);
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => select(index));
+      tab.addEventListener('keydown', (event) => {
+        const delta = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+        if (!delta) return;
+        event.preventDefault();
+        const next = (index + delta + tabs.length) % tabs.length;
+        select(next);
+        tabs[next].focus();
+      });
+    });
+    select(0);
+  }
+</script>

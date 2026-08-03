@@ -1,0 +1,17 @@
+---
+/**
+ * Renders already-sanitised migrated HTML. The markup passed here has been
+ * through scripts/lib/sanitize.mjs, which strips everything outside a small
+ * allowlist, so no untrusted attribute or tag can reach the page.
+ */
+interface Props { html: string; class?: string }
+const { html, class: className } = Astro.props;
+
+// Wide specification tables get their own scroll container so the page body
+// itself never scrolls sideways on small screens.
+const withScrollableTables = html.replace(
+  /<table>/g,
+  '<div class="table-scroll"><table>',
+).replace(/<\/table>/g, '</table></div>');
+---
+<div class={className ? `rich ${className}` : 'rich'} set:html={withScrollableTables} />

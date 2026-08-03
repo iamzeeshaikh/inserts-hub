@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import RichText from '../components/RichText.astro';
+import CTASection from '../components/CTASection.astro';
+import { pages, type Page } from '../lib/site';
+import { breadcrumbs, contactPage, organization } from '../lib/schema';
+
+/**
+ * The static WordPress pages, at their original slugs. `/refund_returns/` keeps
+ * its underscore because that is the indexed URL.
+ */
+export const getStaticPaths: GetStaticPaths = () =>
+  pages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+
+const { page } = Astro.props as { page: Page };
+
+const crumbs = [{ label: 'Home', href: '/' }, { label: page.h1 }];
+const schema: unknown[] = [breadcrumbs(crumbs)];
+if (page.slug === 'contact-us') schema.push(organization(), contactPage(page.url, page.title));
+---
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  path={page.url}
+  ogType="article"
+  noindex={page.noindex}
+  schema={schema}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <div class="wrap page-body">
+    <h1>{page.h1}</h1>
+    {page.bodyHtml && <RichText html={page.bodyHtml} />}
+  </div>
+
+  <CTASection />
+</BaseLayout>

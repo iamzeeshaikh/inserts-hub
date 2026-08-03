@@ -1,0 +1,62 @@
+---
+import { site } from '../lib/site';
+import { isPreview } from '../lib/env';
+
+export interface Props {
+  title: string;
+  description: string;
+  /** Site-relative path with trailing slash — the canonical is always built on the production origin. */
+  path: string;
+  ogType?: 'website' | 'article' | 'product';
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: unknown[];
+}
+
+const { title, description, path, ogType = 'website', ogImage, noindex = false, schema = [] } = Astro.props;
+
+if (!path.startsWith('/') || !path.endsWith('/')) {
+  throw new Error(`SEOHead path must be an absolute, trailing-slash path: ${path}`);
+}
+
+/**
+ * Canonicals, Open Graph URLs, schema and the sitemap are always anchored to the
+ * production origin. Preview deployments differ only by the robots directive, so
+ * a Vercel preview host can never appear in indexable metadata.
+ */
+const canonical = `${site.origin}${path}`;
+const image = ogImage ? new URL(ogImage, site.origin).href : `${site.origin}/images/site/Inserts-Hub-logo.png`;
+const robots = noindex || isPreview ? 'noindex,nofollow' : 'index,follow';
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={robots} />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<link rel="icon" href="/images/site/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/images/site/favicon-32.png" />
+<link
+  rel="preload"
+  href="/fonts/adlam-display-latin.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin="anonymous"
+/>
+
+{schema.map((entry) => (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(entry)} />
+))}

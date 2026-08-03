@@ -1,0 +1,25 @@
+{
+  "name": "insertshub-astro",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate": "node scripts/validate.mjs",
+    "verify": "npm run check && npm run build && npm run validate"
+  },
+  "dependencies": {
+    "@astrojs/vercel": "^11.0.4",
+    "astro": "^7.1.6",
+    "nodemailer": "^7.0.9",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.5",
+    "playwright": "^1.62.1",
+    "typescript": "^5.9.3"
+  }
+}

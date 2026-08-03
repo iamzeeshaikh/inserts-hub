@@ -1,0 +1,940 @@
+[
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Foam-Inserts.webp",
+  "local": "/images/products/Custom-Foam-Inserts.webp",
+  "page": "/product/custom-foam-inserts/",
+  "alt": "Custom Foam Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Foam-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Foam-Inserts-Packaging.webp",
+  "page": "/product/custom-foam-inserts/",
+  "alt": "Custom Foam Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Foam-Inserts-In-Bulk.webp",
+  "local": "/images/products/Custom-Foam-Inserts-In-Bulk.webp",
+  "page": "/product/custom-foam-inserts/",
+  "alt": "Custom Foam Inserts In Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Foam-Inserts-Wholesale.webp",
+  "local": "/images/products/Custom-Foam-Inserts-Wholesale.webp",
+  "page": "/product/custom-foam-inserts/",
+  "alt": "Custom Foam Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cupcake-Boxes-With-Inserts.webp",
+  "local": "/images/products/Cupcake-Boxes-With-Inserts.webp",
+  "page": "/product/cupcake-boxes-with-inserts/",
+  "alt": "Cupcake Boxes With Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cupcake-Boxes-With-Inserts-Packaging.webp",
+  "local": "/images/products/Cupcake-Boxes-With-Inserts-Packaging.webp",
+  "page": "/product/cupcake-boxes-with-inserts/",
+  "alt": "Cupcake Boxes With Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cupcake-Boxes-With-Inserts.webp",
+  "local": "/images/products/Custom-Cupcake-Boxes-With-Inserts.webp",
+  "page": "/product/cupcake-boxes-with-inserts/",
+  "alt": "Custom Cupcake Boxes With Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cupcake-Boxes-With-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Cupcake-Boxes-With-Inserts-Packaging.webp",
+  "page": "/product/cupcake-boxes-with-inserts/",
+  "alt": "Custom Cupcake Boxes With Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cardboard-Box-Inserts.webp",
+  "local": "/images/products/Custom-Cardboard-Box-Inserts.webp",
+  "page": "/product/cardboard-box-inserts/",
+  "alt": "Cardboard Box Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cardboard-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Cardboard-Box-Inserts-Packaging.webp",
+  "page": "/product/cardboard-box-inserts/",
+  "alt": "Custom Cardboard Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cardboard-Box-Inserts.webp",
+  "local": "/images/products/Cardboard-Box-Inserts.webp",
+  "page": "/product/cardboard-box-inserts/",
+  "alt": "Cardboard Box Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cardboard-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Cardboard-Box-Inserts-Packaging.webp",
+  "page": "/product/cardboard-box-inserts/",
+  "alt": "Cardboard Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Box-Divider-Inserts.webp",
+  "local": "/images/products/Box-Divider-Inserts.webp",
+  "page": "/product/box-divider-inserts/",
+  "alt": "Box Divider Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Box-Divider-Inserts.webp",
+  "local": "/images/products/Custom-Box-Divider-Inserts.webp",
+  "page": "/product/box-divider-inserts/",
+  "alt": "Custom Box Divider Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Box-Divider-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Box-Divider-Inserts-Packaging.webp",
+  "page": "/product/box-divider-inserts/",
+  "alt": "Custom Box Divider Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Box-Divider-Inserts-Packaging.webp",
+  "local": "/images/products/Box-Divider-Inserts-Packaging.webp",
+  "page": "/product/box-divider-inserts/",
+  "alt": "Box Divider Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Candle-Boxes-With-Inserts.webp",
+  "local": "/images/products/Candle-Boxes-With-Inserts.webp",
+  "page": "/product/candle-boxes-with-inserts/",
+  "alt": "Candle Boxes With Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Candle-Boxes-With-Inserts.webp",
+  "local": "/images/products/Custom-Candle-Boxes-With-Inserts.webp",
+  "page": "/product/candle-boxes-with-inserts/",
+  "alt": "Custom Candle Boxes With Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Candle-Boxes-With-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Candle-Boxes-With-Inserts-Packaging.webp",
+  "page": "/product/candle-boxes-with-inserts/",
+  "alt": "Custom Candle Boxes With Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Candle-Boxes-With-Inserts-Packaging.webp",
+  "local": "/images/products/Candle-Boxes-With-Inserts-Packaging.webp",
+  "page": "/product/candle-boxes-with-inserts/",
+  "alt": "Candle Boxes With Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Mailer-Box-Inserts.webp",
+  "local": "/images/products/Mailer-Box-Inserts.webp",
+  "page": "/product/mailer-box-inserts/",
+  "alt": "Mailer Box Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Mailer-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Mailer-Box-Inserts-Packaging.webp",
+  "page": "/product/mailer-box-inserts/",
+  "alt": "Mailer Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Mailer-Box-Inserts.webp",
+  "local": "/images/products/Custom-Mailer-Box-Inserts.webp",
+  "page": "/product/mailer-box-inserts/",
+  "alt": "Custom Mailer Box Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Mailer-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Mailer-Box-Inserts-Packaging.webp",
+  "page": "/product/mailer-box-inserts/",
+  "alt": "Custom Mailer Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Candy-Box-Inserts.webp",
+  "local": "/images/products/Candy-Box-Inserts.webp",
+  "page": "/product/candy-box-inserts/",
+  "alt": "Candy Box Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Candy-Box-Inserts.webp",
+  "local": "/images/products/Custom-Candy-Box-Inserts.webp",
+  "page": "/product/candy-box-inserts/",
+  "alt": "Custom Candy Box Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Candy-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Candy-Box-Inserts-Packaging.webp",
+  "page": "/product/candy-box-inserts/",
+  "alt": "Custom Candy Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Candy-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Candy-Box-Inserts-Packaging.webp",
+  "page": "/product/candy-box-inserts/",
+  "alt": "Candy Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Mini-Cupcake-Inserts.webp",
+  "local": "/images/products/Mini-Cupcake-Inserts.webp",
+  "page": "/product/mini-cupcake-inserts/",
+  "alt": "Mini Cupcake Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Mini-Cupcake-Inserts-Packaging.webp",
+  "local": "/images/products/Mini-Cupcake-Inserts-Packaging.webp",
+  "page": "/product/mini-cupcake-inserts/",
+  "alt": "Mini Cupcake Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Mini-Cupcake-Inserts.webp",
+  "local": "/images/products/Custom-Mini-Cupcake-Inserts.webp",
+  "page": "/product/mini-cupcake-inserts/",
+  "alt": "Custom Mini Cupcake Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Mini-Cupcake-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Mini-Cupcake-Inserts-Packaging.webp",
+  "page": "/product/mini-cupcake-inserts/",
+  "alt": "Custom Mini Cupcake Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cardboard-Inserts.webp",
+  "local": "/images/products/Custom-Cardboard-Inserts.webp",
+  "page": "/product/custom-cardboard-inserts/",
+  "alt": "Custom Cardboard Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cardboard-Inserts-Wholesale.webp",
+  "local": "/images/products/Custom-Cardboard-Inserts-Wholesale.webp",
+  "page": "/product/custom-cardboard-inserts/",
+  "alt": "Custom Cardboard Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cardboard-Inserts-And-Bulk.webp",
+  "local": "/images/products/Custom-Cardboard-Inserts-And-Bulk.webp",
+  "page": "/product/custom-cardboard-inserts/",
+  "alt": "Custom Cardboard Inserts And Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cardboard-Inserts-And-Packaging.webp",
+  "local": "/images/products/Custom-Cardboard-Inserts-And-Packaging.webp",
+  "page": "/product/custom-cardboard-inserts/",
+  "alt": "Custom Cardboard Inserts And Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cardboard-Divider-Inserts.webp",
+  "local": "/images/products/Cardboard-Divider-Inserts.webp",
+  "page": "/product/cardboard-divider-inserts/",
+  "alt": "Cardboard Divider Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cardboard-Divider-Inserts.webp",
+  "local": "/images/products/Custom-Cardboard-Divider-Inserts.webp",
+  "page": "/product/cardboard-divider-inserts/",
+  "alt": "Custom Cardboard Divider Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cardboard-Divider-Inserts-Wholesale.webp",
+  "local": "/images/products/Cardboard-Divider-Inserts-Wholesale.webp",
+  "page": "/product/cardboard-divider-inserts/",
+  "alt": "Cardboard Divider Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cardboard-Divider-Inserts-Packaging.webp",
+  "local": "/images/products/Cardboard-Divider-Inserts-Packaging.webp",
+  "page": "/product/cardboard-divider-inserts/",
+  "alt": "Cardboard Divider Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Pizza-Box-Inserts.webp",
+  "local": "/images/products/Pizza-Box-Inserts.webp",
+  "page": "/product/pizza-box-inserts/",
+  "alt": "Pizza Box Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Pizza-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Pizza-Box-Inserts-Packaging.webp",
+  "page": "/product/pizza-box-inserts/",
+  "alt": "Pizza Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Pizza-Box-Inserts.webp",
+  "local": "/images/products/Custom-Pizza-Box-Inserts.webp",
+  "page": "/product/pizza-box-inserts/",
+  "alt": "Custom Pizza Box Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Pizza-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Pizza-Box-Inserts-Packaging.webp",
+  "page": "/product/pizza-box-inserts/",
+  "alt": "Custom Pizza Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Chocolate-Box-Inserts.webp",
+  "local": "/images/products/Chocolate-Box-Inserts.webp",
+  "page": "/product/chocolate-box-inserts/",
+  "alt": "Chocolate Box Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Chocolate-Box-Inserts.webp",
+  "local": "/images/products/Custom-Chocolate-Box-Inserts.webp",
+  "page": "/product/chocolate-box-inserts/",
+  "alt": "Custom Chocolate Box Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Chocolate-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Chocolate-Box-Inserts-Packaging.webp",
+  "page": "/product/chocolate-box-inserts/",
+  "alt": "Custom Chocolate Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Chocolate-Box-Inserts-Packaging.webp",
+  "local": "/images/products/Chocolate-Box-Inserts-Packaging.webp",
+  "page": "/product/chocolate-box-inserts/",
+  "alt": "Chocolate Box Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Foam-Inserts-For-Gift-Boxes.webp",
+  "local": "/images/products/Foam-Inserts-For-Gift-Boxes.webp",
+  "page": "/product/foam-inserts-for-gift-boxes/",
+  "alt": "Foam Inserts For Gift Boxes",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Foam-Inserts-For-Gift-Boxes-Packaging.webp",
+  "local": "/images/products/Foam-Inserts-For-Gift-Boxes-Packaging.webp",
+  "page": "/product/foam-inserts-for-gift-boxes/",
+  "alt": "Foam Inserts For Gift Boxes Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Foam-Inserts-For-Gift-Boxes.webp",
+  "local": "/images/products/Custom-Foam-Inserts-For-Gift-Boxes.webp",
+  "page": "/product/foam-inserts-for-gift-boxes/",
+  "alt": "Custom Foam Inserts For Gift Boxes",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Foam-Inserts-For-Gift-Boxes-Packaging.webp",
+  "local": "/images/products/Custom-Foam-Inserts-For-Gift-Boxes-Packaging.webp",
+  "page": "/product/foam-inserts-for-gift-boxes/",
+  "alt": "Custom Foam Inserts For Gift Boxes Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cookie-Boxes-With-Inserts.webp",
+  "local": "/images/products/Cookie-Boxes-With-Inserts.webp",
+  "page": "/product/cookie-boxes-with-inserts/",
+  "alt": "Cookie Boxes With Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cookie-Boxes-With-Inserts.webp",
+  "local": "/images/products/Custom-Cookie-Boxes-With-Inserts.webp",
+  "page": "/product/cookie-boxes-with-inserts/",
+  "alt": "Custom Cookie Boxes With Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Cookie-Boxes-With-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Cookie-Boxes-With-Inserts-Packaging.webp",
+  "page": "/product/cookie-boxes-with-inserts/",
+  "alt": "Custom Cookie Boxes With Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cookie-Boxes-With-Inserts-Packaging.webp",
+  "local": "/images/products/Cookie-Boxes-With-Inserts-Packaging.webp",
+  "page": "/product/cookie-boxes-with-inserts/",
+  "alt": "Cookie Boxes With Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Truffle-Boxes-With-Inserts.webp",
+  "local": "/images/products/Truffle-Boxes-With-Inserts.webp",
+  "page": "/product/truffle-boxes-with-inserts/",
+  "alt": "Truffle Boxes With Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Truffle-Boxes-With-Inserts-Packaging.webp",
+  "local": "/images/products/Truffle-Boxes-With-Inserts-Packaging.webp",
+  "page": "/product/truffle-boxes-with-inserts/",
+  "alt": "Truffle Boxes With Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Truffle-Boxes-With-Inserts.webp",
+  "local": "/images/products/Custom-Truffle-Boxes-With-Inserts.webp",
+  "page": "/product/truffle-boxes-with-inserts/",
+  "alt": "Custom Truffle Boxes With Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Truffle-Boxes-With-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Truffle-Boxes-With-Inserts-Packaging.webp",
+  "page": "/product/truffle-boxes-with-inserts/",
+  "alt": "Custom Truffle Boxes With Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Paperboard-Inserts.webp",
+  "local": "/images/products/Custom-Paperboard-Inserts.webp",
+  "page": "/product/custom-paperboard-inserts/",
+  "alt": "Custom Paperboard Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Paperboard-Inserts.webp",
+  "local": "/images/products/Paperboard-Inserts.webp",
+  "page": "/product/custom-paperboard-inserts/",
+  "alt": "Paperboard Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Paperboard-Inserts-Packaging.webp",
+  "local": "/images/products/Paperboard-Inserts-Packaging.webp",
+  "page": "/product/custom-paperboard-inserts/",
+  "alt": "Paperboard Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Paperboard-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Paperboard-Inserts-Packaging.webp",
+  "page": "/product/custom-paperboard-inserts/",
+  "alt": "Custom Paperboard Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Corrugated-Cardboard-Inserts.webp",
+  "local": "/images/products/Custom-Corrugated-Cardboard-Inserts.webp",
+  "page": "/product/custom-corrugated-cardboard-inserts/",
+  "alt": "Custom Corrugated Cardboard Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Corrugated-Cardboard-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Corrugated-Cardboard-Inserts-Packaging.webp",
+  "page": "/product/custom-corrugated-cardboard-inserts/",
+  "alt": "Custom Corrugated Cardboard Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Corrugated-Cardboard-Inserts-Packaging.webp",
+  "local": "/images/products/Corrugated-Cardboard-Inserts-Packaging.webp",
+  "page": "/product/custom-corrugated-cardboard-inserts/",
+  "alt": "Corrugated Cardboard Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Corrugated-Cardboard-Inserts.webp",
+  "local": "/images/products/Corrugated-Cardboard-Inserts.webp",
+  "page": "/product/custom-corrugated-cardboard-inserts/",
+  "alt": "Corrugated Cardboard Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Kraft-Paper-Inserts.webp",
+  "local": "/images/products/Custom-Kraft-Paper-Inserts.webp",
+  "page": "/product/custom-kraft-paper-inserts/",
+  "alt": "Custom Kraft Paper Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Kraft-Paper-Inserts.webp",
+  "local": "/images/products/Kraft-Paper-Inserts.webp",
+  "page": "/product/custom-kraft-paper-inserts/",
+  "alt": "Kraft Paper Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Kraft-Paper-Inserts-Packaging.webp",
+  "local": "/images/products/Kraft-Paper-Inserts-Packaging.webp",
+  "page": "/product/custom-kraft-paper-inserts/",
+  "alt": "Kraft Paper Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Custom-Kraft-Paper-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Kraft-Paper-Inserts-Packaging.webp",
+  "page": "/product/custom-kraft-paper-inserts/",
+  "alt": "Custom Kraft Paper Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Product-Packaging-Inserts.webp",
+  "local": "/images/products/Product-Packaging-Inserts.webp",
+  "page": "/product/product-packaging-inserts/",
+  "alt": "Product Packaging Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Product-Packaging-Inserts-Wholesale.webp",
+  "local": "/images/products/Product-Packaging-Inserts-Wholesale.webp",
+  "page": "/product/product-packaging-inserts/",
+  "alt": "Product Packaging Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Product-Packaging-Inserts-In-Bulk.webp",
+  "local": "/images/products/Product-Packaging-Inserts-In-Bulk.webp",
+  "page": "/product/product-packaging-inserts/",
+  "alt": "Product Packaging Inserts In Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Product-Packaging-Inserts.webp",
+  "local": "/images/products/Custom-Product-Packaging-Inserts.webp",
+  "page": "/product/product-packaging-inserts/",
+  "alt": "Custom Product Packaging Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Die-Cut-Inserts.webp",
+  "local": "/images/products/Die-Cut-Inserts.webp",
+  "page": "/product/die-cut-inserts/",
+  "alt": "Die Cut Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Die-Cut-Inserts-Wholesale.webp",
+  "local": "/images/products/Die-Cut-Inserts-Wholesale.webp",
+  "page": "/product/die-cut-inserts/",
+  "alt": "Die Cut Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Die-Cut-Inserts-Packaging.webp",
+  "local": "/images/products/Die-Cut-Inserts-Packaging.webp",
+  "page": "/product/die-cut-inserts/",
+  "alt": "Die Cut Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Die-Cut-Inserts.webp",
+  "local": "/images/products/Custom-Die-Cut-Inserts.webp",
+  "page": "/product/die-cut-inserts/",
+  "alt": "Custom Die Cut Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Cardboard-Inserts-For-Bags.webp",
+  "local": "/images/products/Custom-Cardboard-Inserts-For-Bags.webp",
+  "page": "/product/cardboard-inserts-for-bags/",
+  "alt": "Cardboard Inserts For Bags",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Cardboard-Inserts-For-Bags.webp",
+  "local": "/images/products/Cardboard-Inserts-For-Bags.webp",
+  "page": "/product/cardboard-inserts-for-bags/",
+  "alt": "Cardboard Inserts For Bags",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Cardboard-Inserts-For-Bags-Wholesale.webp",
+  "local": "/images/products/Cardboard-Inserts-For-Bags-Wholesale.webp",
+  "page": "/product/cardboard-inserts-for-bags/",
+  "alt": "Cardboard Inserts For Bags Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Cardboard-Inserts-For-Bags-And-Packaging.webp",
+  "local": "/images/products/Cardboard-Inserts-For-Bags-And-Packaging.webp",
+  "page": "/product/cardboard-inserts-for-bags/",
+  "alt": "Cardboard Inserts For Bags And Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Plastic-Inserts.webp",
+  "local": "/images/products/Custom-Plastic-Inserts.webp",
+  "page": "/product/custom-plastic-inserts/",
+  "alt": "Custom Plastic Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Plastic-Inserts-Wholesale.webp",
+  "local": "/images/products/Custom-Plastic-Inserts-Wholesale.webp",
+  "page": "/product/custom-plastic-inserts/",
+  "alt": "Custom Plastic Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Plastic-Inserts-Packaging.webp",
+  "local": "/images/products/Custom-Plastic-Inserts-Packaging.webp",
+  "page": "/product/custom-plastic-inserts/",
+  "alt": "Custom Plastic Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Plastic-Inserts-In-Bulk.webp",
+  "local": "/images/products/Custom-Plastic-Inserts-In-Bulk.webp",
+  "page": "/product/custom-plastic-inserts/",
+  "alt": "Custom Plastic Inserts In Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Carton-Inserts.webp",
+  "local": "/images/products/Carton-Inserts.webp",
+  "page": "/product/carton-inserts/",
+  "alt": "Carton Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Carton-Inserts.webp",
+  "local": "/images/products/Custom-Carton-Inserts.webp",
+  "page": "/product/carton-inserts/",
+  "alt": "Custom Carton Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Carton-Inserts-Wholesale.webp",
+  "local": "/images/products/Carton-Inserts-Wholesale.webp",
+  "page": "/product/carton-inserts/",
+  "alt": "Carton Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Carton-Inserts-Packaging.webp",
+  "local": "/images/products/Carton-Inserts-Packaging.webp",
+  "page": "/product/carton-inserts/",
+  "alt": "Carton Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Boxes-With-Foam-Inserts.webp",
+  "local": "/images/products/Custom-Boxes-With-Foam-Inserts.webp",
+  "page": "/product/custom-boxes-with-foam-inserts/",
+  "alt": "Custom Boxes With Foam Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Boxes-With-Foam-Inserts-Wholesale.webp",
+  "local": "/images/products/Custom-Boxes-With-Foam-Inserts-Wholesale.webp",
+  "page": "/product/custom-boxes-with-foam-inserts/",
+  "alt": "Custom Boxes With Foam Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Boxes-With-Foam-Inserts-In-Bulk.webp",
+  "local": "/images/products/Custom-Boxes-With-Foam-Inserts-In-Bulk.webp",
+  "page": "/product/custom-boxes-with-foam-inserts/",
+  "alt": "Custom Boxes With Foam Inserts In Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Boxes-With-Foam-Inserts-And-Packaging.webp",
+  "local": "/images/products/Custom-Boxes-With-Foam-Inserts-And-Packaging.webp",
+  "page": "/product/custom-boxes-with-foam-inserts/",
+  "alt": "Custom Boxes With Foam Inserts And Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Molded-Pulp-Inserts.webp",
+  "local": "/images/products/Molded-Pulp-Inserts.webp",
+  "page": "/product/molded-pulp-inserts/",
+  "alt": "Molded Pulp Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Molded-Pulp-Inserts-Wholesale.webp",
+  "local": "/images/products/Molded-Pulp-Inserts-Wholesale.webp",
+  "page": "/product/molded-pulp-inserts/",
+  "alt": "Molded Pulp Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Molded-Pulp-Inserts-Packaging.webp",
+  "local": "/images/products/Molded-Pulp-Inserts-Packaging.webp",
+  "page": "/product/molded-pulp-inserts/",
+  "alt": "Molded Pulp Inserts Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Molded-Pulp-Inserts.webp",
+  "local": "/images/products/Custom-Molded-Pulp-Inserts.webp",
+  "page": "/product/molded-pulp-inserts/",
+  "alt": "Custom Molded Pulp Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Corrugated-Inserts.webp",
+  "local": "/images/products/Corrugated-Inserts.webp",
+  "page": "/product/corrugated-inserts/",
+  "alt": "Corrugated Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Custom-Corrugated-Inserts.webp",
+  "local": "/images/products/Custom-Corrugated-Inserts.webp",
+  "page": "/product/corrugated-inserts/",
+  "alt": "Custom Corrugated Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Corrugated-Inserts-Wholesale.webp",
+  "local": "/images/products/Corrugated-Inserts-Wholesale.webp",
+  "page": "/product/corrugated-inserts/",
+  "alt": "Corrugated Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/11/Corrugated-Inserts-And-Packaging.webp",
+  "local": "/images/products/Corrugated-Inserts-And-Packaging.webp",
+  "page": "/product/corrugated-inserts/",
+  "alt": "Corrugated Inserts And Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Die-Cut-Cardboard-Inserts.webp",
+  "local": "/images/products/Die-Cut-Cardboard-Inserts.webp",
+  "page": "/product/die-cut-cardboard-inserts/",
+  "alt": "Die Cut Cardboard Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Die-Cut-Cardboard-Inserts-In-Bulk.webp",
+  "local": "/images/products/Die-Cut-Cardboard-Inserts-In-Bulk.webp",
+  "page": "/product/die-cut-cardboard-inserts/",
+  "alt": "Die Cut Cardboard Inserts In Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Custom-Die-Cut-Cardboard-Inserts.webp",
+  "local": "/images/products/Custom-Die-Cut-Cardboard-Inserts.webp",
+  "page": "/product/die-cut-cardboard-inserts/",
+  "alt": "Custom Die Cut Cardboard Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Die-Cut-Cardboard-Inserts-Wholesale.webp",
+  "local": "/images/products/Die-Cut-Cardboard-Inserts-Wholesale.webp",
+  "page": "/product/die-cut-cardboard-inserts/",
+  "alt": "Die Cut Cardboard Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Kraft-Cardboard-Inserts.webp",
+  "local": "/images/products/Kraft-Cardboard-Inserts.webp",
+  "page": "/product/kraft-cardboard-inserts/",
+  "alt": "Kraft Cardboard Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Kraft-Cardboard-Inserts-In-Bulk.webp",
+  "local": "/images/products/Kraft-Cardboard-Inserts-In-Bulk.webp",
+  "page": "/product/kraft-cardboard-inserts/",
+  "alt": "Kraft Cardboard Inserts In Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Kraft-Cardboard-Inserts-Wholesale.webp",
+  "local": "/images/products/Kraft-Cardboard-Inserts-Wholesale.webp",
+  "page": "/product/kraft-cardboard-inserts/",
+  "alt": "Kraft Cardboard Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Custom-Kraft-Cardboard-Inserts.webp",
+  "local": "/images/products/Custom-Kraft-Cardboard-Inserts.webp",
+  "page": "/product/kraft-cardboard-inserts/",
+  "alt": "Custom Kraft Cardboard Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/White-Cardboard-Inserts.webp",
+  "local": "/images/products/White-Cardboard-Inserts.webp",
+  "page": "/product/white-cardboard-inserts/",
+  "alt": "White Cardboard Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/White-Cardboard-Inserts-In-Bulk.webp",
+  "local": "/images/products/White-Cardboard-Inserts-In-Bulk.webp",
+  "page": "/product/white-cardboard-inserts/",
+  "alt": "White Cardboard Inserts In Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Custom-White-Cardboard-Inserts.webp",
+  "local": "/images/products/Custom-White-Cardboard-Inserts.webp",
+  "page": "/product/white-cardboard-inserts/",
+  "alt": "Custom White Cardboard Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/White-Cardboard-Inserts-Wholesale.webp",
+  "local": "/images/products/White-Cardboard-Inserts-Wholesale.webp",
+  "page": "/product/white-cardboard-inserts/",
+  "alt": "White Cardboard Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Rigid-Box-Cardboard-Inserts.webp",
+  "local": "/images/products/Rigid-Box-Cardboard-Inserts.webp",
+  "page": "/product/rigid-box-cardboard-inserts/",
+  "alt": "Rigid Box Cardboard Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Rigid-Box-Cardboard-Inserts-In-Bulk.webp",
+  "local": "/images/products/Rigid-Box-Cardboard-Inserts-In-Bulk.webp",
+  "page": "/product/rigid-box-cardboard-inserts/",
+  "alt": "Rigid Box Cardboard Inserts In Bulk",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Rigid-Box-Cardboard-Inserts-Wholesale.webp",
+  "local": "/images/products/Rigid-Box-Cardboard-Inserts-Wholesale.webp",
+  "page": "/product/rigid-box-cardboard-inserts/",
+  "alt": "Rigid Box Cardboard Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Custom-Rigid-Box-Cardboard-Inserts.webp",
+  "local": "/images/products/Custom-Rigid-Box-Cardboard-Inserts.webp",
+  "page": "/product/rigid-box-cardboard-inserts/",
+  "alt": "Custom Rigid Box Cardboard Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Cardboard-Box-Divider-Inserts.webp",
+  "local": "/images/products/Cardboard-Box-Divider-Inserts.webp",
+  "page": "/product/cardboard-box-divider-inserts/",
+  "alt": "Cardboard Box Divider Inserts",
+  "role": "primary"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Cardboard-Box-Divider-Inserts-And-Packaging.webp",
+  "local": "/images/products/Cardboard-Box-Divider-Inserts-And-Packaging.webp",
+  "page": "/product/cardboard-box-divider-inserts/",
+  "alt": "Cardboard Box Divider Inserts And Packaging",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Cardboard-Box-Divider-Inserts-Wholesale.webp",
+  "local": "/images/products/Cardboard-Box-Divider-Inserts-Wholesale.webp",
+  "page": "/product/cardboard-box-divider-inserts/",
+  "alt": "Cardboard Box Divider Inserts Wholesale",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2026/07/Custom-Cardboard-Box-Divider-Inserts.webp",
+  "local": "/images/products/Custom-Cardboard-Box-Divider-Inserts.webp",
+  "page": "/product/cardboard-box-divider-inserts/",
+  "alt": "Custom Cardboard Box Divider Inserts",
+  "role": "gallery"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Corrugated-Cardboard-Inserts-Packaging.webp",
+  "local": "/images/site/Corrugated-Cardboard-Inserts-Packaging.webp",
+  "page": "/",
+  "alt": "Custom Inserts for Every Need",
+  "role": "slide"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Mini-Cupcake-Inserts.webp",
+  "local": "/images/site/Mini-Cupcake-Inserts.webp",
+  "page": "/",
+  "alt": "Bulk Orders, Big Savings",
+  "role": "slide"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cardboard-Divider-Inserts-Packaging.webp",
+  "local": "/images/site/Cardboard-Divider-Inserts-Packaging.webp",
+  "page": "/",
+  "alt": "Secure Your Products with Precision",
+  "role": "slide"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/08/boxes-gif-unscreen.gif",
+  "local": "/images/site/boxes-gif-unscreen.gif",
+  "page": "/",
+  "alt": "Custom Design, Sizes & Style",
+  "role": "feature"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/08/gif-boxes.gif",
+  "local": "/images/site/gif-boxes.gif",
+  "page": "/",
+  "alt": "Custom Design, Sizes & Style",
+  "role": "feature"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/08/Offset-Press.gif",
+  "local": "/images/site/Offset-Press.gif",
+  "page": "/",
+  "alt": "High Quality Offset Printing",
+  "role": "feature"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/08/Delivery-Icon-Giff.gif",
+  "local": "/images/site/Delivery-Icon-Giff.gif",
+  "page": "/",
+  "alt": "Fast Shipping 8-10 Business Days",
+  "role": "feature"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Inserts-Hub-500-x-300.png",
+  "local": "/images/site/Inserts-Hub-logo.png",
+  "page": "header",
+  "alt": "Inserts Hub — fit, protect, deliver",
+  "role": "logo"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/certificate.png",
+  "local": "/images/site/certificate.png",
+  "page": "footer",
+  "alt": "DMCA Protected, SiteLock secure, McAfee secure and BBB accredited business badges",
+  "role": "badge"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/cropped-Inserts-Hub-500-x-200-32x32.png",
+  "local": "/images/site/favicon-32.png",
+  "page": "head",
+  "alt": "Inserts Hub",
+  "role": "favicon"
+ }
+]

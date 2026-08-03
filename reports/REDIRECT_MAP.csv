@@ -1,0 +1,10 @@
+Old URL,New URL,Status code,Hops
+https://insertshub.com/about-us-2/,https://insertshub.com/about-us/,301,1
+https://insertshub.com/cart/,https://insertshub.com/products/,301,1
+https://insertshub.com/checkout/,https://insertshub.com/products/,301,1
+https://insertshub.com/my-account/,https://insertshub.com/contact-us/,301,1
+https://insertshub.com/product-category/foam-inserts/,https://insertshub.com/products/,301,1
+https://insertshub.com/product/printed-cardboard-inserts/,https://insertshub.com/product/custom-cardboard-inserts/,301,1
+https://insertshub.com/product/recycled-cardboard-inserts/,https://insertshub.com/product/custom-kraft-paper-inserts/,301,1
+https://insertshub.com/product/White-cardboard-inserts/,https://insertshub.com/product/white-cardboard-inserts/,301,1
+https://insertshub.com/sitemap_index.xml,https://insertshub.com/sitemap.xml,301,1

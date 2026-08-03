@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+---
+<BaseLayout
+  title="Page not found - Inserts Hub"
+  description="The page you were looking for is not available. Browse our custom packaging inserts instead."
+  path="/404/"
+  noindex
+>
+  <div class="wrap notfound">
+    <h1>We can’t find that page</h1>
+    <p>The page you were looking for has moved or no longer exists. These links should help.</p>
+    <ul>
+      {site.nav.map((item) => (
+        <li><a class="btn btn--blue" href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

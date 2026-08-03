@@ -1,0 +1,11 @@
+---
+interface Props { heading?: string; tint?: boolean; labelledBy?: string }
+const { heading, tint = false, labelledBy } = Astro.props;
+const id = labelledBy ?? (heading ? heading.toLowerCase().replace(/[^a-z0-9]+/g, '-') : undefined);
+---
+<section class={tint ? 'section section--tint' : 'section'} aria-labelledby={id}>
+  <div class="wrap">
+    {heading && <h2 id={id}>{heading}</h2>}
+    <slot />
+  </div>
+</section>

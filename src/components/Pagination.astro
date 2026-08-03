@@ -1,0 +1,18 @@
+---
+/** Crawlable numbered pagination. Every page is a real URL — no query strings. */
+interface Props { current: number; total: number; base: string }
+const { current, total, base } = Astro.props;
+const href = (n: number) => (n === 1 ? base : `${base}page/${n}/`);
+const numbers = Array.from({ length: total }, (_, i) => i + 1);
+---
+{total > 1 && (
+  <nav class="pagination" aria-label="Products pagination">
+    {current > 1 && <a href={href(current - 1)} rel="prev">Previous</a>}
+    {numbers.map((n) => (
+      n === current
+        ? <span aria-current="page">{n}</span>
+        : <a href={href(n)}>{n}</a>
+    ))}
+    {current < total && <a href={href(current + 1)} rel="next">Next</a>}
+  </nav>
+)}

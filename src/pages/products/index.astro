@@ -1,0 +1,13 @@
+---
+import ProductArchive from '../../components/ProductArchive.astro';
+import { alphabetical } from '../../lib/site';
+---
+<ProductArchive
+  heading="Products"
+  title="Products - Inserts Hub"
+  description="Browse every custom packaging insert from Inserts Hub: cardboard, corrugated, foam, kraft, paperboard, molded pulp and plastic inserts at wholesale prices."
+  base="/products/"
+  page={1}
+  all={alphabetical}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Products' }]}
+/>

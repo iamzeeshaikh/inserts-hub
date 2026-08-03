@@ -1,0 +1,174 @@
+{
+ "origin": "https://insertshub.com",
+ "name": "Inserts Hub",
+ "tagline": "FIT. PROTECT. DELIVER.",
+ "email": "info@insertshub.com",
+ "phone": "+1-929-2141-874",
+ "phoneHref": "+19292141874",
+ "address": {
+  "street": "3409 N 7th Ave Unit #529",
+  "locality": "Phoenix",
+  "region": "AZ",
+  "postalCode": "85013",
+  "country": "US"
+ },
+ "addressLine": "3409 N 7th Ave Unit #529 Phoenix, AZ 85013",
+ "social": {
+  "facebook": "https://www.facebook.com/insertshub/",
+  "linkedin": "https://www.linkedin.com/company/105388524/"
+ },
+ "copyright": "Copyright © Inserts Hub 2024",
+ "nav": [
+  {
+   "label": "Home",
+   "href": "/"
+  },
+  {
+   "label": "Products",
+   "href": "/products/"
+  },
+  {
+   "label": "About Us",
+   "href": "/about-us/"
+  },
+  {
+   "label": "Contact Us",
+   "href": "/contact-us/"
+  },
+  {
+   "label": "Refund and Returns Policy",
+   "href": "/refund_returns/"
+  }
+ ],
+ "footerCompany": [
+  {
+   "label": "About Us",
+   "href": "/about-us/"
+  },
+  {
+   "label": "Contact Us",
+   "href": "/contact-us/"
+  },
+  {
+   "label": "Privacy Policy",
+   "href": "/privacy-policy/"
+  },
+  {
+   "label": "Refund and Returns Policy",
+   "href": "/refund_returns/"
+  },
+  {
+   "label": "Terms & Conditions",
+   "href": "/terms-conditions/"
+  }
+ ],
+ "footerTopProducts": [
+  "candle-boxes-with-inserts",
+  "candy-box-inserts",
+  "chocolate-box-inserts",
+  "cookie-boxes-with-inserts",
+  "custom-foam-inserts",
+  "custom-kraft-paper-inserts"
+ ],
+ "homeFeatures": [
+  {
+   "title": "Custom Design, Sizes & Style",
+   "image": "/images/site/boxes-gif-unscreen.gif",
+   "tint": true
+  },
+  {
+   "title": "Custom Design, Sizes & Style",
+   "image": "/images/site/gif-boxes.gif",
+   "tint": true
+  },
+  {
+   "title": "High Quality Offset Printing",
+   "image": "/images/site/Offset-Press.gif",
+   "tint": false
+  },
+  {
+   "title": "Fast Shipping 8-10 Business Days",
+   "image": "/images/site/Delivery-Icon-Giff.gif",
+   "tint": false
+  }
+ ],
+ "slides": [
+  {
+   "h1": true,
+   "heading": "Custom Inserts for Every Need",
+   "text": "From foam inserts to cardboard dividers, find the perfect fit for all your packaging requirements at wholesale prices.",
+   "cta": {
+    "label": "Shop Now",
+    "href": "/products/"
+   },
+   "image": "/images/site/Corrugated-Cardboard-Inserts-Packaging.webp"
+  },
+  {
+   "heading": "Bulk Orders, Big Savings",
+   "text": "Buy custom inserts in bulk and save on premium quality packaging solutions for your business",
+   "cta": {
+    "label": "Get a Quote",
+    "href": "#quote"
+   },
+   "image": "/images/site/Mini-Cupcake-Inserts.webp"
+  },
+  {
+   "heading": "Secure Your Products with Precision",
+   "text": "Explore our range of inserts designed to protect and display your products beautifully. Custom options available!",
+   "cta": {
+    "label": "Explore Our Collection",
+    "href": "/products/"
+   },
+   "image": "/images/site/Cardboard-Divider-Inserts-Packaging.webp"
+  }
+ ],
+ "homeOrder": [
+  "white-cardboard-inserts",
+  "kraft-cardboard-inserts",
+  "rigid-box-cardboard-inserts",
+  "cardboard-box-divider-inserts",
+  "die-cut-cardboard-inserts",
+  "corrugated-inserts",
+  "molded-pulp-inserts",
+  "custom-boxes-with-foam-inserts",
+  "carton-inserts",
+  "custom-plastic-inserts",
+  "cardboard-inserts-for-bags",
+  "die-cut-inserts",
+  "product-packaging-inserts",
+  "custom-cardboard-inserts",
+  "cardboard-divider-inserts",
+  "pizza-box-inserts",
+  "chocolate-box-inserts",
+  "foam-inserts-for-gift-boxes",
+  "cookie-boxes-with-inserts",
+  "truffle-boxes-with-inserts",
+  "custom-paperboard-inserts",
+  "custom-corrugated-cardboard-inserts",
+  "custom-kraft-paper-inserts",
+  "custom-foam-inserts",
+  "cupcake-boxes-with-inserts",
+  "cardboard-box-inserts",
+  "box-divider-inserts",
+  "candle-boxes-with-inserts",
+  "mailer-box-inserts",
+  "candy-box-inserts",
+  "mini-cupcake-inserts"
+ ],
+ "categories": [
+  {
+   "slug": "cardboard-inserts",
+   "name": "Cardboard Inserts",
+   "title": "Cardboard Inserts & Product Packaging Solutions | Inserts Hub",
+   "description": "Protect your products with custom cardboard inserts. Single & multi-product layouts, free design help, wholesale pricing & fast USA delivery."
+  },
+  {
+   "slug": "product",
+   "name": "Product",
+   "title": "Product Archives - Inserts Hub",
+   "description": ""
+  }
+ ],
+ "quoteIntro": "Looking for custom inserts or need bulk pricing? Fill out the form below, and our team will get back to you with a tailored quote. Let us know your requirements, and we’ll find the perfect solution for your packaging needs.",
+ "perPage": 16
+}

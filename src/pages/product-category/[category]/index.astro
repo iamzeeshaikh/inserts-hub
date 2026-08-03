@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from 'astro';
+import ProductArchive from '../../../components/ProductArchive.astro';
+import { site, productsInCategory, type Category } from '../../../lib/site';
+
+export const getStaticPaths: GetStaticPaths = () =>
+  site.categories.map((category) => ({ params: { category: category.slug }, props: { category } }));
+
+const { category } = Astro.props as { category: Category };
+const all = productsInCategory(category.slug);
+---
+<ProductArchive
+  heading={category.name}
+  title={category.title}
+  description={category.description || `Browse ${category.name.toLowerCase()} from Inserts Hub — custom sizes, materials and printing options at wholesale prices.`}
+  base={`/product-category/${category.slug}/`}
+  page={1}
+  all={all}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Products', href: '/products/' }, { label: category.name }]}
+/>

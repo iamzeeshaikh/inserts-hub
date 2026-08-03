@@ -1,0 +1,672 @@
+{
+ "/images/products/Custom-Foam-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Foam-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Foam-Inserts-In-Bulk.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Foam-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cupcake-Boxes-With-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cupcake-Boxes-With-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cupcake-Boxes-With-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cupcake-Boxes-With-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Box-Divider-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Box-Divider-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Box-Divider-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Box-Divider-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Candle-Boxes-With-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Candle-Boxes-With-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Candle-Boxes-With-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Candle-Boxes-With-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Mailer-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Mailer-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Mailer-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Mailer-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Candy-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Candy-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Candy-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Candy-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Mini-Cupcake-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Mini-Cupcake-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Mini-Cupcake-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Mini-Cupcake-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Inserts-And-Bulk.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Inserts-And-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Divider-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Divider-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Divider-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Divider-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Pizza-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Pizza-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Pizza-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Pizza-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Chocolate-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Chocolate-Box-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Chocolate-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Chocolate-Box-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Foam-Inserts-For-Gift-Boxes.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Foam-Inserts-For-Gift-Boxes-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Foam-Inserts-For-Gift-Boxes.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Foam-Inserts-For-Gift-Boxes-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cookie-Boxes-With-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cookie-Boxes-With-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cookie-Boxes-With-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cookie-Boxes-With-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Truffle-Boxes-With-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Truffle-Boxes-With-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Truffle-Boxes-With-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Truffle-Boxes-With-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Paperboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Paperboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Paperboard-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Paperboard-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Corrugated-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Corrugated-Cardboard-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Corrugated-Cardboard-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Corrugated-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Kraft-Paper-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Kraft-Paper-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Kraft-Paper-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Kraft-Paper-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Product-Packaging-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Product-Packaging-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Product-Packaging-Inserts-In-Bulk.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Product-Packaging-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Die-Cut-Inserts.webp": {
+  "width": 800,
+  "height": 800,
+  "pipeline": "assets"
+ },
+ "/images/products/Die-Cut-Inserts-Wholesale.webp": {
+  "width": 800,
+  "height": 800,
+  "pipeline": "assets"
+ },
+ "/images/products/Die-Cut-Inserts-Packaging.webp": {
+  "width": 800,
+  "height": 800,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Die-Cut-Inserts.webp": {
+  "width": 800,
+  "height": 800,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Inserts-For-Bags.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Inserts-For-Bags.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Inserts-For-Bags-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Inserts-For-Bags-And-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Plastic-Inserts.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Plastic-Inserts-Wholesale.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Plastic-Inserts-Packaging.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Plastic-Inserts-In-Bulk.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Carton-Inserts.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Carton-Inserts.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Carton-Inserts-Wholesale.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Carton-Inserts-Packaging.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Boxes-With-Foam-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Boxes-With-Foam-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Boxes-With-Foam-Inserts-In-Bulk.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Boxes-With-Foam-Inserts-And-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Molded-Pulp-Inserts.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Molded-Pulp-Inserts-Wholesale.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Molded-Pulp-Inserts-Packaging.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Molded-Pulp-Inserts.webp": {
+  "width": 1080,
+  "height": 1080,
+  "pipeline": "assets"
+ },
+ "/images/products/Corrugated-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Corrugated-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Corrugated-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Corrugated-Inserts-And-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Die-Cut-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Die-Cut-Cardboard-Inserts-In-Bulk.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Die-Cut-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Die-Cut-Cardboard-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Kraft-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Kraft-Cardboard-Inserts-In-Bulk.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Kraft-Cardboard-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Kraft-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/White-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/White-Cardboard-Inserts-In-Bulk.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-White-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/White-Cardboard-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Rigid-Box-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Rigid-Box-Cardboard-Inserts-In-Bulk.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Rigid-Box-Cardboard-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Rigid-Box-Cardboard-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Box-Divider-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Box-Divider-Inserts-And-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Cardboard-Box-Divider-Inserts-Wholesale.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/products/Custom-Cardboard-Box-Divider-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/site/Corrugated-Cardboard-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/site/Mini-Cupcake-Inserts.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/site/Cardboard-Divider-Inserts-Packaging.webp": {
+  "width": 1200,
+  "height": 1200,
+  "pipeline": "assets"
+ },
+ "/images/site/boxes-gif-unscreen.gif": {
+  "width": 480,
+  "height": 360,
+  "pipeline": "public"
+ },
+ "/images/site/gif-boxes.gif": {
+  "width": 1600,
+  "height": 1200,
+  "pipeline": "public"
+ },
+ "/images/site/Offset-Press.gif": {
+  "width": 512,
+  "height": 484,
+  "pipeline": "public"
+ },
+ "/images/site/Delivery-Icon-Giff.gif": {
+  "width": 1024,
+  "height": 582,
+  "pipeline": "public"
+ },
+ "/images/site/Inserts-Hub-logo.png": {
+  "width": 500,
+  "height": 300,
+  "pipeline": "assets"
+ },
+ "/images/site/certificate.png": {
+  "width": 564,
+  "height": 72,
+  "pipeline": "public"
+ },
+ "/images/site/favicon-32.png": {
+  "width": 32,
+  "height": 32,
+  "pipeline": "public"
+ }
+}

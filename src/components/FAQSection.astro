@@ -1,0 +1,16 @@
+---
+import type { Faq } from '../lib/site';
+
+interface Props { faqs: Faq[]; headingId?: string }
+const { faqs, headingId = 'faqs-heading' } = Astro.props;
+---
+{faqs.length > 0 && (
+  <div class="faq" aria-labelledby={headingId}>
+    {faqs.map((faq) => (
+      <details>
+        <summary><h3>{faq.question}</h3></summary>
+        <div class="faq__answer rich" set:html={faq.answer} />
+      </details>
+    ))}
+  </div>
+)}

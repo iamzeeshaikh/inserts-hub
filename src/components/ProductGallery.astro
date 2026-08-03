@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import { asset } from '../lib/images';
+import type { Product } from '../lib/site';
+
+interface Props { product: Product }
+const { product } = Astro.props;
+
+const shots = product.images.map((src, i) => ({
+  image: asset(src),
+  alt: product.imageAlts[i] ?? product.name,
+}));
+---
+<div class="gallery" data-gallery>
+  <div class="gallery__main">
+    {shots.map((shot, i) => (
+      <Image
+        src={shot.image}
+        alt={shot.alt}
+        width={600}
+        height={600}
+        densities={[1, 2]}
+        loading={i === 0 ? 'eager' : 'lazy'}
+        fetchpriority={i === 0 ? 'high' : undefined}
+        decoding={i === 0 ? 'sync' : 'async'}
+        hidden={i !== 0}
+        data-gallery-slide={i}
+      />
+    ))}
+  </div>
+
+  {shots.length > 1 && (
+    <ul class="gallery__thumbs" role="list">
+      {shots.map((shot, i) => (
+        <li>
+          <button
+            type="button"
+            data-gallery-thumb={i}
+            aria-current={i === 0 ? 'true' : 'false'}
+          >
+            <Image
+              src={shot.image}
+              alt={`Show image ${i + 1} of ${shots.length}: ${shot.alt}`}
+              width={140}
+              height={140}
+              densities={[1, 2]}
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
+
+<script>
+  for (const gallery of document.querySelectorAll<HTMLElement>('[data-gallery]')) {
+    const slides = gallery.querySelectorAll<HTMLElement>('[data-gallery-slide]');
+    const thumbs = gallery.querySelectorAll<HTMLButtonElement>('[data-gallery-thumb]');
+    thumbs.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        slides.forEach((slide, i) => slide.toggleAttribute('hidden', i !== index));
+        thumbs.forEach((t, i) => t.setAttribute('aria-current', String(i === index)));
+      });
+    });
+  }
+</script>

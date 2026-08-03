@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import ProductGrid from './ProductGrid.astro';
+import Pagination from './Pagination.astro';
+import CTASection from './CTASection.astro';
+import type { Crumb } from './Breadcrumbs.astro';
+import { site, type Product } from '../lib/site';
+import { breadcrumbs, collectionPage } from '../lib/schema';
+
+interface Props {
+  heading: string;
+  title: string;
+  description: string;
+  /** Archive root, e.g. `/products/`. Page N lives at `${base}page/N/`. */
+  base: string;
+  page: number;
+  all: Product[];
+  crumbs: Crumb[];
+}
+const { heading, title, description, base, page, all, crumbs } = Astro.props;
+
+const perPage = site.perPage;
+const lastPage = Math.max(1, Math.ceil(all.length / perPage));
+if (page < 1 || page > lastPage) throw new Error(`page ${page} is out of range for ${base}`);
+
+const items = all.slice((page - 1) * perPage, page * perPage);
+const path = page === 1 ? base : `${base}page/${page}/`;
+const from = (page - 1) * perPage + 1;
+const to = from + items.length - 1;
+---
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schema={[breadcrumbs(crumbs), collectionPage(path, heading, description, items)]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <div class="wrap page-body">
+    <h1>{heading}</h1>
+    <p class="result-count">
+      {lastPage === 1
+        ? `Showing all ${all.length} results`
+        : `Showing ${from}–${to} of ${all.length} results`}
+    </p>
+    <ProductGrid products={items} eagerCount={3} />
+    <Pagination current={page} total={lastPage} base={base} />
+  </div>
+
+  <CTASection />
+</BaseLayout>

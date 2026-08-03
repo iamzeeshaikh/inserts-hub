@@ -1,0 +1,69 @@
+---
+import { site, productBySlug } from '../lib/site';
+import Icon from './Icon.astro';
+
+const topProducts = site.footerTopProducts.map(productBySlug);
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div>
+        <h2 class="visually-hidden">Contact Inserts Hub</h2>
+        <ul class="footer__contact">
+          <li>
+            <Icon name="mail" size={17} />
+            <span><strong>Email:</strong><br /><a href={`mailto:${site.email}`}>{site.email}</a></span>
+          </li>
+          <li>
+            <Icon name="phone" size={17} />
+            <span><strong>Phone:</strong><br /><a href={`tel:${site.phoneHref}`}>{site.phone}</a></span>
+          </li>
+          <li>
+            <Icon name="pin" size={17} />
+            <span><strong>Address:</strong><br />{site.addressLine}</span>
+          </li>
+        </ul>
+        <div class="footer__social">
+          <a href={site.social.facebook} target="_blank" rel="noopener noreferrer">
+            <Icon name="facebook" size={20} />
+            <span class="visually-hidden">Inserts Hub on Facebook</span>
+          </a>
+          <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer">
+            <Icon name="linkedin" size={20} />
+            <span class="visually-hidden">Inserts Hub on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-labelledby="footer-company">
+        <h2 id="footer-company">Company</h2>
+        <ul>
+          {site.footerCompany.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-products">
+        <h2 id="footer-products">Top products</h2>
+        <ul>
+          {topProducts.map((p) => (
+            <li><a href={p.url}>{p.name}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <img
+        src="/images/site/certificate.png"
+        alt="DMCA Protected, SiteLock secure, McAfee SECURE and BBB Accredited Business badges"
+        width="564"
+        height="72"
+        loading="lazy"
+        decoding="async"
+      />
+      <p>{site.copyright}</p>
+    </div>
+  </div>
+</footer>

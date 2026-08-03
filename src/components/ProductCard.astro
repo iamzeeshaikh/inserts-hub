@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import { asset } from '../lib/images';
+import type { Product } from '../lib/site';
+
+interface Props { product: Product; eager?: boolean }
+const { product, eager = false } = Astro.props;
+const img = asset(product.images[0]);
+---
+<article class="card">
+  <a class="card__media" href={product.url} tabindex="-1" aria-hidden="true">
+    <Image
+      src={img}
+      alt=""
+      width={400}
+      height={400}
+      densities={[1, 2]}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding={eager ? 'sync' : 'async'}
+    />
+  </a>
+  <div class="card__body">
+    <h3 class="card__title"><a href={product.url}>{product.name}</a></h3>
+  </div>
+</article>

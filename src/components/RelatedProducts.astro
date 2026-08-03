@@ -1,0 +1,16 @@
+---
+import ProductGrid from './ProductGrid.astro';
+import { productBySlug } from '../lib/site';
+
+interface Props { slugs: string[] }
+const { slugs } = Astro.props;
+const items = slugs.map(productBySlug);
+---
+{items.length > 0 && (
+  <section class="section section--tint" aria-labelledby="related-heading">
+    <div class="wrap">
+      <h2 id="related-heading">Related Products</h2>
+      <ProductGrid products={items} columns={4} eagerCount={0} />
+    </div>
+  </section>
+)}

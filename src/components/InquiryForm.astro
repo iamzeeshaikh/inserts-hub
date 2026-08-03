@@ -1,0 +1,139 @@
+---
+import { products } from '../lib/site';
+
+interface Props {
+  /** `quote` is the wide three-column CTA form; `aside` is the compact sidebar form. */
+  variant: 'quote' | 'aside';
+  /** Product preselected in the dropdown, preserved from the page the visitor is on. */
+  productName?: string;
+  id: string;
+}
+const { variant, productName, id } = Astro.props;
+const isQuote = variant === 'quote';
+const names = products.map((p) => p.name).sort((a, b) => a.localeCompare(b));
+---
+<form
+  class={isQuote ? 'form form--quote' : 'form'}
+  id={id}
+  method="post"
+  action="/api/inquiry/"
+  enctype="multipart/form-data"
+  novalidate
+  data-inquiry-form
+>
+  <!-- Bots fill this in; humans never see it. Submissions with a value are dropped. -->
+  <div class="honeypot" aria-hidden="true">
+    <label for={`${id}-company-website`}>Company website</label>
+    <input id={`${id}-company-website`} type="text" name="company_website" tabindex="-1" autocomplete="off" />
+  </div>
+  <input type="hidden" name="source_page" value={Astro.url.pathname} />
+  <input type="hidden" name="form_variant" value={variant} />
+  <input type="hidden" name="rendered_at" value={String(Date.now())} />
+
+  <div class="field">
+    <label for={`${id}-name`}>Your Name <span class="req" aria-hidden="true">*</span></label>
+    <input id={`${id}-name`} name="name" type="text" required autocomplete="name" maxlength="120" />
+  </div>
+
+  <div class="field">
+    <label for={`${id}-phone`}>Your Phone <span class="req" aria-hidden="true">*</span></label>
+    <input id={`${id}-phone`} name="phone" type="tel" required autocomplete="tel" maxlength="40" />
+  </div>
+
+  <div class="field">
+    <label for={`${id}-email`}>Your Email <span class="req" aria-hidden="true">*</span></label>
+    <input id={`${id}-email`} name="email" type="email" required autocomplete="email" maxlength="160" />
+  </div>
+
+  <div class={isQuote ? 'field span-2' : 'field'}>
+    <label for={`${id}-product`}>Select Product</label>
+    <select id={`${id}-product`} name="product">
+      {names.map((n) => (
+        <option value={n} selected={n === productName}>{n}</option>
+      ))}
+      <option value="Other" selected={!productName}>Other</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for={`${id}-quantity`}>Order Quantity</label>
+    <input id={`${id}-quantity`} name="quantity" type="text" inputmode="numeric" maxlength="40" placeholder="Order Quantity" />
+  </div>
+
+  {isQuote && (
+    <div class="field span-3">
+      <label for={`${id}-dimensions`}>Dimensions &amp; Material Requirements</label>
+      <input id={`${id}-dimensions`} name="dimensions" type="text" maxlength="200" placeholder="e.g. 8 x 6 x 2 inches, kraft board" />
+    </div>
+  )}
+
+  <div class={isQuote ? 'field span-3' : 'field'}>
+    <label for={`${id}-message`}>Message/Additional Details</label>
+    <textarea id={`${id}-message`} name="message" rows="5" maxlength="4000" placeholder="Write A Message"></textarea>
+  </div>
+
+  <div class={isQuote ? 'field span-3' : 'field'}>
+    <label for={`${id}-artwork`}>Artwork (optional)</label>
+    <input
+      id={`${id}-artwork`}
+      name="artwork"
+      type="file"
+      accept=".pdf,.png,.jpg,.jpeg,.webp,.ai,.eps"
+      aria-describedby={`${id}-artwork-help`}
+    />
+    <small id={`${id}-artwork-help`}>PDF, PNG, JPG, WebP, AI or EPS. Maximum 8&nbsp;MB.</small>
+  </div>
+
+  <div class={isQuote ? 'span-3' : ''}>
+    <button class={isQuote ? 'btn btn--red' : 'btn btn--red'} type="submit" data-submit>
+      {isQuote ? 'Request a Quote' : 'Submit'}
+    </button>
+  </div>
+
+  <p class={isQuote ? 'form__status span-3' : 'form__status'} role="status" aria-live="polite" hidden data-status></p>
+</form>
+
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>('[data-inquiry-form]')) {
+    const status = form.querySelector<HTMLElement>('[data-status]');
+    const submit = form.querySelector<HTMLButtonElement>('[data-submit]');
+    if (!status || !submit) continue;
+
+    const show = (message: string, ok: boolean) => {
+      status.textContent = message;
+      status.classList.toggle('form__status--ok', ok);
+      status.classList.toggle('form__status--err', !ok);
+      status.hidden = false;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const original = submit.textContent;
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+      status.hidden = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        const result = await response.json().catch(() => ({}));
+        if (response.ok && result.ok) {
+          // Success is only reported once the server confirms the message was delivered.
+          window.location.assign('/thank-you/');
+          return;
+        }
+        show(result.error || 'We could not send your message. Please email info@insertshub.com.', false);
+      } catch {
+        show('Network error — your message was not sent. Please email info@insertshub.com.', false);
+      } finally {
+        submit.disabled = false;
+        submit.textContent = original;
+      }
+    });
+  }
+</script>

@@ -1,0 +1,14 @@
+---
+import InquiryForm from './InquiryForm.astro';
+import { site } from '../lib/site';
+
+interface Props { productName?: string; id?: string }
+const { productName, id = 'quote' } = Astro.props;
+---
+<section class="quote" id={id} aria-labelledby={`${id}-heading`}>
+  <div class="wrap">
+    <h2 id={`${id}-heading`}>Get a Custom Quote for Inserts</h2>
+    <p class="quote__intro">{site.quoteIntro}</p>
+    <InquiryForm variant="quote" productName={productName} id={`${id}-form`} />
+  </div>
+</section>

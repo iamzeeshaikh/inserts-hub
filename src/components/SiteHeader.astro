@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+import { site } from '../lib/site';
+import Icon from './Icon.astro';
+import logo from '../assets/site/Inserts-Hub-logo.png';
+
+const current = Astro.url.pathname;
+const isCurrent = (href: string) => (href === current ? 'page' : undefined);
+---
+<header class="site-header">
+  <div class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="topbar__social">
+        <a href={site.social.facebook} target="_blank" rel="noopener noreferrer">
+          <Icon name="facebook" size={17} />
+          <span class="visually-hidden">Inserts Hub on Facebook</span>
+        </a>
+        <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer">
+          <Icon name="linkedin" size={17} />
+          <span class="visually-hidden">Inserts Hub on LinkedIn</span>
+        </a>
+      </div>
+
+      <div class="topbar__contact">
+        <span>
+          <Icon name="mail" size={16} />
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </span>
+        <span>
+          <Icon name="phone" size={16} />
+          <a href={`tel:${site.phoneHref}`}>{site.phone}</a>
+        </span>
+      </div>
+
+      <a class="btn btn--ghost" href="/contact-us/">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="brandbar">
+    <div class="wrap brandbar__inner">
+      <a class="brandbar__logo" href="/" aria-label={`${site.name} home`}>
+        <Image
+          src={logo}
+          alt={`${site.name} — ${site.tagline}`}
+          width={300}
+          height={180}
+          densities={[1, 2]}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </a>
+    </div>
+  </div>
+
+  <nav class="navbar" aria-label="Main">
+    <div class="wrap navbar__inner">
+      <ul class="navbar__list">
+        {site.nav.map((item) => (
+          <li><a href={item.href} aria-current={isCurrent(item.href)}>{item.label}</a></li>
+        ))}
+      </ul>
+      <button
+        class="navtoggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        data-nav-toggle
+      >
+        <Icon name="menu" size={22} />
+        Menu
+      </button>
+    </div>
+    <div class="mobilenav" id="mobile-nav" hidden>
+      <ul>
+        {site.nav.map((item) => (
+          <li><a href={item.href} aria-current={isCurrent(item.href)}>{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const panel = document.getElementById('mobile-nav');
+  if (toggle && panel) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.toggleAttribute('hidden', !open);
+      panel.toggleAttribute('open', open);
+    };
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  }
+</script>
