@@ -183,7 +183,12 @@ for (const [from, to] of Object.entries(redirects)) {
 const sitemap = fs.readFileSync(path.join(ROOT, 'dist/client/sitemap.xml'), 'utf8');
 const locs = all(sitemap, /<loc>([^<]+)<\/loc>/g);
 if (!locs.length) fail('sitemap.xml is empty');
-const noindexRoutes = new Set(docs.filter((d) => /noindex/.test(attr(d.html, /<meta name="robots" content="([^"]*)"/i))).map((d) => d.route));
+/**
+ * Routes that are noindex *by intent* — the thank-you page and the 404. This is
+ * deliberately not derived from the rendered meta tag, because a non-live build
+ * marks every page noindex; the sitemap still describes the production site.
+ */
+const noindexRoutes = new Set(['/404/', ...pagesData.filter((p) => p.noindex).map((p) => p.url)]);
 
 for (const loc of locs) {
   if (!loc.startsWith(ORIGIN)) fail(`sitemap contains a non-production URL: ${loc}`);
@@ -203,8 +208,31 @@ for (const route of indexable) {
 
 // ---------------------------------------------------------------- 7. robots
 const robotsTxt = fs.readFileSync(path.join(ROOT, 'dist/client/robots.txt'), 'utf8');
-if (!robotsTxt.includes(`Sitemap: ${ORIGIN}/sitemap.xml`)) fail('robots.txt does not reference the production sitemap');
 if (/vercel\.app/.test(robotsTxt)) fail('robots.txt references a preview host');
+
+/**
+ * Indexing is opt-in. Unless this build was made with VERCEL_ENV=production and
+ * SITE_LIVE=true, every page must be noindex and robots.txt must disallow all —
+ * so a *.vercel.app deployment can never be indexed before DNS cutover.
+ */
+const indexingAllowed = process.env.VERCEL_ENV === 'production' && String(process.env.SITE_LIVE).toLowerCase() === 'true';
+if (indexingAllowed) {
+  if (!robotsTxt.includes(`Sitemap: ${ORIGIN}/sitemap.xml`)) fail('robots.txt does not reference the production sitemap');
+  for (const doc of docs) {
+    const robots = attr(doc.html, /<meta name="robots" content="([^"]*)"/i);
+    const shouldBeNoindex = pagesData.find((p) => p.url === doc.route)?.noindex || doc.route === '/404/';
+    if (!shouldBeNoindex && !robots.includes('index,follow')) fail(`${doc.route}: expected index,follow in a live production build`);
+  }
+} else {
+  if (!/^User-agent: \*\nDisallow: \/$/m.test(robotsTxt.trim())) {
+    fail('non-live build must serve "User-agent: * / Disallow: /" in robots.txt');
+  }
+  for (const doc of docs) {
+    const robots = attr(doc.html, /<meta name="robots" content="([^"]*)"/i);
+    if (!robots.includes('noindex')) fail(`${doc.route}: non-live build must be noindex (got "${robots}")`);
+  }
+  console.log('indexing guard: build is NON-LIVE — all pages noindex, robots.txt disallows all');
+}
 
 // ---------------------------------------------------------------- 8. schema
 for (const doc of docs) {

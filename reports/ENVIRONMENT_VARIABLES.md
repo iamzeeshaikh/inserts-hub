@@ -33,3 +33,28 @@ the browser only shows success after the SMTP server has accepted the message.
 If the old WordPress host had SMTP credentials stored in a plugin, treat them as
 compromised and issue a **new** password for this site rather than reusing them.
 See `SECURITY_CUTOVER_CHECKLIST.md`.
+
+---
+
+## `SITE_LIVE` — the indexing switch
+
+| Variable | Required | Environments | Value | Purpose |
+| --- | --- | --- | --- | --- |
+| `SITE_LIVE` | to enable indexing | Production only | `true` | Allows `index,follow` and a crawlable `robots.txt` |
+
+**Leave this unset until insertshub.com's DNS points at this Vercel project.**
+
+Indexing requires **both** `VERCEL_ENV=production` **and** `SITE_LIVE=true`.
+Vercel promotes the first deployment of a new project to the production target
+automatically, so `VERCEL_ENV` on its own would let `inserts-hub.vercel.app`
+serve an indexable copy of the site before cutover. With this switch:
+
+| State | `robots.txt` | Page meta |
+| --- | --- | --- |
+| Any preview deployment | `Disallow: /` | `noindex,nofollow` |
+| Production target, `SITE_LIVE` unset | `Disallow: /` | `noindex,nofollow` |
+| Production target, `SITE_LIVE=true` | `Allow: /` + sitemap | `index,follow` |
+
+Setting it is a deliberate step in the cutover runbook, performed **after** DNS
+has moved. `npm run validate` asserts the correct behaviour for whichever mode
+the build was made in.
