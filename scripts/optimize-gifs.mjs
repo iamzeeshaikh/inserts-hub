@@ -23,12 +23,13 @@ for (const file of gifs) {
   const dest = src.replace(/\.gif$/i, '.webp');
   const input = fs.readFileSync(src);
 
-  // These render at 194px wide at most, so 400px covers 2x displays. One of the
-  // source GIFs is 1600x1200 across many frames, which exceeds sharp's default
-  // pixel guard — raised deliberately for these four known-good local files.
+  // These render at 194px wide at most, so 260px still covers a comfortable 1.3x
+  // on the widest card; they are small decorative loops, not detail images. One source GIF is 1600x1200 across many frames, which
+  // exceeds sharp's default pixel guard — raised for these four known-good
+  // local files only.
   const output = await sharp(input, { animated: true, limitInputPixels: false })
-    .resize({ width: 400, withoutEnlargement: true })
-    .webp({ quality: 72, effort: 6 })
+    .resize({ width: 260, withoutEnlargement: true })
+    .webp({ quality: 58, effort: 6, alphaQuality: 70, smartSubsample: true })
     .toBuffer();
 
   fs.writeFileSync(dest, output);

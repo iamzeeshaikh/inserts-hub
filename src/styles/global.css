@@ -365,19 +365,48 @@ a:hover { color: var(--blue-light); }
 .crumbs [aria-current='page'] { color: var(--ink); font-weight: 600; }
 
 /* ---------------------------------------------------------------- hero slider */
+/* 50/50 row from the Elementor slide templates: image left, copy right. */
 .hero { background: var(--tint-3); }
+
 .hero__slide {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 40px;
   align-items: center;
-  padding-block: 40px;
+  padding-block: 44px 20px;
 }
-.hero__slide[hidden] { display: none; }
-.hero__copy h1, .hero__copy h2 { margin-bottom: 0.45em; }
-.hero__copy p { color: var(--ink-soft); font-size: 1.05rem; max-width: 46ch; }
-.hero__media img { border-radius: var(--radius); width: 100%; height: auto; }
-.hero__dots { display: flex; gap: 0; justify-content: center; padding-bottom: 10px; }
+
+.hero__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.hero__copy h1,
+.hero__copy h2 {
+  margin-bottom: 0.4em;
+  font-size: clamp(1.85rem, 1.2rem + 2.6vw, 3rem);
+  line-height: 1.15;
+}
+
+.hero__copy p {
+  max-width: 46ch;
+  font-size: clamp(1rem, 0.94rem + 0.3vw, 1.125rem);
+  color: var(--ink-soft);
+}
+
+.hero__action { margin: 26px 0 0; text-align: center; }
+
+/* The slide button is a pill (19px radius in the template), centred. */
+.btn--pill { border-radius: 19px; padding: 13px 34px; }
+
+.hero__dots {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  padding-bottom: 14px;
+}
+
 /* 11px dot, 44px tap target: the padding is transparent and clipped to the box. */
 .hero__dots button {
   width: 44px;
@@ -389,11 +418,16 @@ a:hover { color: var(--blue-light); }
   background-clip: content-box;
   cursor: pointer;
 }
-.hero__dots button[aria-current='true'] { background: var(--red); background-clip: content-box; }
+.hero__dots button[aria-selected='true'] { background: var(--red); background-clip: content-box; }
 
-@media (max-width: 800px) {
-  .hero__slide { grid-template-columns: 1fr; gap: 22px; padding-block: 28px; }
-  .hero__media { order: -1; }
+@media (max-width: 860px) {
+  .hero__slide {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding-block: 28px 12px;
+  }
+  .hero__copy p { max-width: none; }
+  .hero__action { text-align: left; }
 }
 
 /* ---------------------------------------------------------------- features */

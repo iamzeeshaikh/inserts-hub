@@ -1,0 +1,114 @@
+---
+import { Image } from 'astro:assets';
+import { site } from '../lib/site';
+import { asset } from '../lib/images';
+import { HERO_WIDTHS, HERO_SIZES } from '../lib/hero';
+
+/**
+ * Hero slider rebuilt from the supplied Elementor slide templates
+ * (#2722, #2730, #2736). Each slide is a 50/50 row — image left, heading and
+ * copy right, with a centred pill button (19px radius) below.
+ *
+ * Every slide is present in the HTML, so all three headings and links are
+ * crawlable and the section still works with JavaScript disabled: without JS
+ * the first slide is shown and the dots simply do nothing.
+ */
+const slides = site.slides.map((slide) => ({ ...slide, media: asset(slide.image) }));
+
+---
+<section class="hero" aria-roledescription="carousel" aria-label="Featured packaging inserts">
+  <div class="wrap">
+    {slides.map((slide, i) => (
+      <div
+        class="hero__slide"
+        role="group"
+        aria-roledescription="slide"
+        aria-label={`${i + 1} of ${slides.length}`}
+        hidden={i !== 0}
+        data-slide={i}
+      >
+        <div class="hero__media">
+          <Image
+            src={slide.media}
+            alt={slide.heading}
+            widths={HERO_WIDTHS}
+            sizes={HERO_SIZES}
+            width={560}
+            height={560}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            fetchpriority={i === 0 ? 'high' : undefined}
+            decoding={i === 0 ? 'sync' : 'async'}
+          />
+        </div>
+
+        <div class="hero__copy">
+          {slide.h1 ? <h1>{slide.heading}</h1> : <h2>{slide.heading}</h2>}
+          <p>{slide.text}</p>
+          <p class="hero__action">
+            <a class="btn btn--red btn--pill" href={slide.cta.href}>{slide.cta.label}</a>
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="hero__dots" role="tablist" aria-label="Choose a slide">
+    {slides.map((slide, i) => (
+      <button
+        type="button"
+        role="tab"
+        data-dot={i}
+        aria-selected={i === 0 ? 'true' : 'false'}
+        aria-label={slide.heading}
+      ></button>
+    ))}
+  </div>
+</section>
+
+<script>
+  const hero = document.querySelector<HTMLElement>('.hero');
+  const slides = document.querySelectorAll<HTMLElement>('[data-slide]');
+  const dots = document.querySelectorAll<HTMLButtonElement>('[data-dot]');
+
+  if (hero && slides.length > 1) {
+    let current = 0;
+
+    const show = (index: number) => {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.toggleAttribute('hidden', i !== current));
+      dots.forEach((dot, i) => dot.setAttribute('aria-selected', String(i === current)));
+    };
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => show(index));
+      dot.addEventListener('keydown', (event) => {
+        const delta = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+        if (!delta) return;
+        event.preventDefault();
+        const next = (index + delta + dots.length) % dots.length;
+        show(next);
+        dots[next].focus();
+      });
+    });
+
+    // Advance on a timer, but never for visitors who asked for reduced motion,
+    // and never while the section is hovered or holds keyboard focus.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let timer: ReturnType<typeof setInterval> | undefined;
+
+    const stop = () => { if (timer) { clearInterval(timer); timer = undefined; } };
+    const start = () => {
+      stop();
+      if (reduceMotion.matches || document.hidden) return;
+      timer = setInterval(() => show(current + 1), 6000);
+    };
+
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+    hero.addEventListener('focusin', stop);
+    hero.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    reduceMotion.addEventListener('change', start);
+    start();
+  }
+</script>

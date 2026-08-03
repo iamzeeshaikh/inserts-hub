@@ -868,6 +868,27 @@
   "role": "gallery"
  },
  {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Corrugated-Cardboard-Inserts-Packaging.webp",
+  "local": "/images/site/Corrugated-Cardboard-Inserts-Packaging.webp",
+  "page": "/",
+  "alt": "Custom Inserts for Every Need",
+  "role": "slide"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Mini-Cupcake-Inserts.webp",
+  "local": "/images/site/Mini-Cupcake-Inserts.webp",
+  "page": "/",
+  "alt": "Bulk Orders, Big Savings",
+  "role": "slide"
+ },
+ {
+  "remote": "https://insertshub.com/wp-content/uploads/2024/10/Cardboard-Divider-Inserts-Packaging.webp",
+  "local": "/images/site/Cardboard-Divider-Inserts-Packaging.webp",
+  "page": "/",
+  "alt": "Secure Your Products with Precision",
+  "role": "slide"
+ },
+ {
   "remote": "https://insertshub.com/wp-content/uploads/2024/08/boxes-gif-unscreen.gif",
   "local": "/images/site/boxes-gif-unscreen.gif",
   "page": "/",
