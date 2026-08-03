@@ -654,6 +654,11 @@
   "height": 582,
   "pipeline": "public"
  },
+ "/images/site/check-mark-green.jpg": {
+  "width": 826,
+  "height": 826,
+  "pipeline": "assets"
+ },
  "/images/site/Inserts-Hub-logo.png": {
   "width": 500,
   "height": 300,

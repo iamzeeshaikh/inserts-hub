@@ -433,6 +433,7 @@ for (const p of products) {
 }
 for (const s of site.slides) manifest.push({ remote: siteImage(s.image), local: s.image, page: '/', alt: s.heading, role: 'slide' });
 for (const f of site.homeFeatures) manifest.push({ remote: siteImage(f.image), local: f.image, page: '/', alt: f.title, role: 'feature' });
+manifest.push({ remote: 'https://insertshub.com/wp-content/uploads/2025/04/check-mark-gree.jpg', local: '/images/site/check-mark-green.jpg', page: '/thank-you/', alt: 'Your message has been sent', role: 'confirmation' });
 manifest.push({ remote: 'https://insertshub.com/wp-content/uploads/2024/10/Inserts-Hub-500-x-300.png', local: '/images/site/Inserts-Hub-logo.png', page: 'header', alt: 'Inserts Hub — fit, protect, deliver', role: 'logo' });
 manifest.push({ remote: 'https://insertshub.com/wp-content/uploads/2024/10/certificate.png', local: '/images/site/certificate.png', page: 'footer', alt: 'DMCA Protected, SiteLock secure, McAfee secure and BBB accredited business badges', role: 'badge' });
 manifest.push({ remote: 'https://insertshub.com/wp-content/uploads/2024/10/cropped-Inserts-Hub-500-x-200-32x32.png', local: '/images/site/favicon-32.png', page: 'head', alt: 'Inserts Hub', role: 'favicon' });

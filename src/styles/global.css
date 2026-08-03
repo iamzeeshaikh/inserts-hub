@@ -801,6 +801,8 @@ a:hover { color: var(--blue-light); }
 .section > .wrap > h2:first-child { margin-top: 0; }
 .page-body { padding-block: 30px 40px; }
 .page-body .rich { max-width: 78ch; }
+.confirmation { margin: 0 0 1.4em; }
+.confirmation img { width: 150px; height: auto; }
 
 /* ---------------------------------------------------------------- footer */
 .footer {

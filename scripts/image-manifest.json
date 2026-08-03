@@ -917,6 +917,13 @@
   "role": "feature"
  },
  {
+  "remote": "https://insertshub.com/wp-content/uploads/2025/04/check-mark-gree.jpg",
+  "local": "/images/site/check-mark-green.jpg",
+  "page": "/thank-you/",
+  "alt": "Your message has been sent",
+  "role": "confirmation"
+ },
+ {
   "remote": "https://insertshub.com/wp-content/uploads/2024/10/Inserts-Hub-500-x-300.png",
   "local": "/images/site/Inserts-Hub-logo.png",
   "page": "header",

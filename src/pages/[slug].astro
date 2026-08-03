@@ -4,7 +4,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import RichText from '../components/RichText.astro';
 import CTASection from '../components/CTASection.astro';
+import { Image } from 'astro:assets';
 import { pages, type Page } from '../lib/site';
+import { asset } from '../lib/images';
 import { breadcrumbs, contactPage, organization } from '../lib/schema';
 
 /**
@@ -17,6 +19,8 @@ export const getStaticPaths: GetStaticPaths = () =>
 const { page } = Astro.props as { page: Page };
 
 const crumbs = [{ label: 'Home', href: '/' }, { label: page.h1 }];
+// The live thank-you page pairs its heading with a green tick.
+const confirmation = page.slug === 'thank-you' ? asset('/images/site/check-mark-green.jpg') : null;
 const schema: unknown[] = [breadcrumbs(crumbs)];
 if (page.slug === 'contact-us') schema.push(organization(), contactPage(page.url, page.title));
 ---
@@ -32,6 +36,22 @@ if (page.slug === 'contact-us') schema.push(organization(), contactPage(page.url
 
   <div class="wrap page-body">
     <h1>{page.h1}</h1>
+    {confirmation && (
+      <p class="confirmation">
+        <Image
+          src={confirmation}
+          alt="Your message has been sent"
+          width={220}
+          height={220}
+          densities={[1, 2]}
+          loading="eager"
+        />
+      </p>
+    )}
+    {page.slug === 'thank-you' && (
+      <p>Thanks for getting in touch. Our team has your enquiry and will reply shortly.
+        In the meantime you can <a href="/products/">browse the full range of inserts</a>.</p>
+    )}
     {page.bodyHtml && <RichText html={page.bodyHtml} />}
   </div>
 

@@ -5,14 +5,38 @@ None of them are exposed to the browser: the enquiry endpoint runs as a
 serverless function, and the post-build validator fails if any SMTP value
 appears in a client asset.
 
-| Variable | Required | Environments | Example | Purpose |
+| Variable | Required | Set? | Value | Purpose |
 | --- | --- | --- | --- | --- |
-| `SMTP_HOST` | **yes** | Production, Preview | `smtp.hostinger.com` | Outgoing mail host |
-| `SMTP_PORT` | no (default `465`) | Production, Preview | `465` | `465` uses implicit TLS; any other port uses STARTTLS |
-| `SMTP_USER` | **yes** | Production, Preview | `info@insertshub.com` | SMTP username |
-| `SMTP_PASS` | **yes** | Production, Preview | `••••••••` | SMTP password — **never commit this** |
-| `SMTP_FROM` | no | Production, Preview | `"Inserts Hub website" <info@insertshub.com>` | From header; defaults to `SMTP_USER` |
-| `INQUIRY_TO` | no | Production, Preview | `info@insertshub.com` | Where quote requests are delivered |
+| `SMTP_HOST` | **yes** | ✅ | `smtp.gmail.com` | Outgoing mail host |
+| `SMTP_PORT` | no (default `465`) | ✅ | `587` | `465` = implicit TLS; anything else requires STARTTLS |
+| `SMTP_USER` | **yes** | ✅ | `shanzeeshan571@gmail.com` | SMTP username |
+| `SMTP_PASS` | **yes** | ❌ **missing** | — | Gmail **App Password** (16 chars) — never commit |
+| `SMTP_TO` | no | ✅ | `shanimazhar82@gmail.com` | Where quote requests are delivered |
+| `SMTP_FROM_NAME` | no | ✅ | `Website Ka Kame` | Display name on the notification |
+| `SMTP_FROM_EMAIL` | no | ⚠️ not set | — | Only honoured if it shares `SMTP_USER`'s domain (see below) |
+
+`INQUIRY_TO` and `SMTP_FROM` are still accepted as aliases for `SMTP_TO` and the
+From identity, so either naming convention works.
+
+### Gmail specifics
+
+- **`SMTP_PASS` must be an App Password**, not the account password. Enable
+  2-Step Verification on the Google account, then Google Account → Security →
+  App passwords → generate one for "Mail". It is 16 characters.
+- Port 587 uses STARTTLS, which the endpoint now *requires* rather than merely
+  offers, so credentials are never sent in the clear.
+- Gmail refuses to send as an address the authenticated account does not own.
+  The supplied `SMTP_FROM_EMAIL=info@websitekaname` is both syntactically invalid
+  (no TLD) and on a different domain from `shanzeeshan571@gmail.com`, so it is
+  ignored: mail is sent as `shanzeeshan571@gmail.com` with the display name
+  `Website Ka Kame`, and the enquirer's address is set as `Reply-To`.
+- Gmail caps outbound mail at roughly 500 messages a day.
+
+> **Worth considering:** sending Inserts Hub enquiries from a personal Gmail
+> address under an unrelated brand name is likely to be filtered as spam and
+> reads oddly to anyone who sees the header. If an `info@insertshub.com` mailbox
+> exists, using it for both `SMTP_USER` and `SMTP_FROM_EMAIL` would be more
+> deliverable and more consistent with the site.
 
 Vercel sets `VERCEL` and `VERCEL_ENV` automatically. `VERCEL_ENV !== 'production'`
 is what switches every page to `noindex,nofollow` and `robots.txt` to
