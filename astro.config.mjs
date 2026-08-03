@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
-import { redirects } from './src/lib/redirects.mjs';
 
 /**
  * The canonical production origin never changes, even on preview deployments —
@@ -15,7 +14,6 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'auto' },
   compressHTML: true,
-  redirects,
   image: { responsiveStyles: true, layout: 'constrained' },
   devToolbar: { enabled: false },
 });
