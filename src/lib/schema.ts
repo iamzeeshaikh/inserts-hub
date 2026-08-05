@@ -58,6 +58,7 @@ export function breadcrumbs(items: Array<{ label: string; href?: string }>) {
 
 export function product(p: Product, imageUrls: string[]) {
   const url = `${site.origin}${p.url}`;
+  const price = Number.parseFloat(p.price);
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -65,18 +66,38 @@ export function product(p: Product, imageUrls: string[]) {
     url,
     name: p.name,
     description: p.seoDescription,
-    sku: p.id,
-    mpn: p.id,
+    // Same offer id the Merchant Center feed submits (gla_<WordPress post id>),
+    // so the on-page structured data matches the approved feed items.
+    sku: `gla_${p.id}`,
     category: p.categoryName,
     brand: { '@type': 'Brand', name: site.name },
     image: imageUrls.map((u) => new URL(u, site.origin).href),
     offers: {
       '@type': 'Offer',
       url,
-      price: p.price,
+      // Formatted exactly as the merchant feed emits it (toFixed(2)).
+      price: Number.isFinite(price) ? price.toFixed(2) : p.price,
       priceCurrency: 'USD',
+      priceValidUntil: '2027-08-04',
       availability: p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+      itemCondition: 'https://schema.org/NewCondition',
       seller: { '@id': `${site.origin}/#organization` },
+      // "Free delivery in the USA" — stated in the product copy sitewide.
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: { '@type': 'MonetaryAmount', value: 0, currency: 'USD' },
+        shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'US' },
+      },
+      // Mirrors /refund_returns/: 10-day window, by mail, prepaid label, no fees.
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'US',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 10,
+        returnMethod: 'https://schema.org/ReturnByMail',
+        returnFees: 'https://schema.org/FreeReturn',
+        merchantReturnLink: `${site.origin}/refund_returns/`,
+      },
     },
   };
 }
