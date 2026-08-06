@@ -17,7 +17,7 @@ const img = asset(product.images[0]);
   <a class="card__media" href={product.url} tabindex="-1" aria-hidden="true">
     <Image
       src={img}
-      alt=""
+      alt={product.imageAlts?.[0] ?? product.name}
       width={400}
       height={400}
       densities={[1, 2]}

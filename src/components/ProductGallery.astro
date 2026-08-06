@@ -56,10 +56,37 @@ const shots = product.images.map((src, i) => ({
 
 <script>
   for (const gallery of document.querySelectorAll<HTMLElement>('[data-gallery]')) {
-    const slides = gallery.querySelectorAll<HTMLElement>('[data-gallery-slide]');
+    const slides = gallery.querySelectorAll<HTMLImageElement>('img[data-gallery-slide]');
     const thumbs = gallery.querySelectorAll<HTMLButtonElement>('[data-gallery-thumb]');
+
+    // Hidden slides carry loading="lazy" and never intersect, so without a
+    // nudge the first click on a thumbnail would wait on a network fetch.
+    // Warm each slide off the critical path so the swap is instant.
+    const warm = (img: HTMLImageElement | undefined) => {
+      if (!img || img.dataset.warmed) return;
+      img.dataset.warmed = 'true';
+      const pre = new Image();
+      pre.fetchPriority = 'low';
+      pre.decoding = 'async';
+      if (img.sizes) pre.sizes = img.sizes;
+      if (img.srcset) pre.srcset = img.srcset;
+      pre.src = img.src;
+      img.loading = 'eager';
+    };
+
+    const warmAll = () => slides.forEach((slide) => warm(slide));
+    const idle: (fn: () => void) => void =
+      'requestIdleCallback' in window
+        ? (fn) => window.requestIdleCallback(fn)
+        : (fn) => setTimeout(fn, 300);
+    if (document.readyState === 'complete') idle(warmAll);
+    else window.addEventListener('load', () => idle(warmAll), { once: true });
+
     thumbs.forEach((thumb, index) => {
+      thumb.addEventListener('pointerenter', () => warm(slides[index]), { passive: true });
+      thumb.addEventListener('touchstart', () => warm(slides[index]), { passive: true });
       thumb.addEventListener('click', () => {
+        warm(slides[index]);
         slides.forEach((slide, i) => slide.toggleAttribute('hidden', i !== index));
         thumbs.forEach((t, i) => t.setAttribute('aria-current', String(i === index)));
       });

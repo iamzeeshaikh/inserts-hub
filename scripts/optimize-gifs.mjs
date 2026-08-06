@@ -14,7 +14,9 @@ import sharp from 'sharp';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DIR = path.join(ROOT, 'public', 'images', 'site');
 
-const gifs = fs.readdirSync(DIR).filter((f) => f.toLowerCase().endsWith('.gif'));
+const gifs = fs
+  .readdirSync(DIR)
+  .filter((f) => f.toLowerCase().endsWith('.gif') && !f.startsWith('._'));
 let before = 0;
 let after = 0;
 

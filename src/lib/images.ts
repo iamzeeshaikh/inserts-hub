@@ -6,12 +6,14 @@
 import type { ImageMetadata } from 'astro';
 
 const assets = import.meta.glob<{ default: ImageMetadata }>(
-  '../assets/**/*.{jpeg,jpg,png,webp,avif}',
+  ['../assets/**/*.{jpeg,jpg,png,webp,avif}', '!../assets/**/._*'],
   { eager: true },
 );
 
 const byPath = new Map<string, ImageMetadata>();
 for (const [file, mod] of Object.entries(assets)) {
+  // macOS AppleDouble sidecars (`._foo.jpg`) are metadata, not images.
+  if (file.split('/').pop()?.startsWith('._')) continue;
   byPath.set(file.replace('../assets/', '/images/'), mod.default);
 }
 
