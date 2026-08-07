@@ -5,6 +5,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import type { Props as SeoProps } from '../components/SEOHead.astro';
 import '../styles/global.css';
 
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 type Props = SeoProps;
 const props = Astro.props;
 ---
@@ -25,6 +26,7 @@ const props = Astro.props;
         Conversations land in the dashboard at chat.zeeops.dev under the
         `insertshub` site. */}
     <script src="https://chat.zeeops.dev/widget.js?siteId=insertshub" defer is:inline></script>
+      <WhatsAppButton />
   </body>
 </html>
 
