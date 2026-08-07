@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { site, products, pages, alphabetical, productsInCategory } from '../lib/site';
+import { BLOG_POSTS } from '../lib/blog';
 
 /**
  * Hand-built sitemap so we control exactly what ships: only indexable 200 pages
@@ -25,6 +26,9 @@ export const GET: APIRoute = () => {
 
   for (const p of products) add(p.url, '0.8');
   for (const p of pages) if (!p.noindex) add(p.url, '0.6');
+
+  add('/blog/', '0.6');
+  for (const b of BLOG_POSTS) add(b.url, '0.6');
 
   const seen = new Set<string>();
   const body = [

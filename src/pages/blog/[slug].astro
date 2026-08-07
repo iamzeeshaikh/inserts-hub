@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { BLOG_POSTS } from '../../lib/blog';
+
+export function getStaticPaths() {
+  return BLOG_POSTS.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = post;
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: post.title },
+];
+
+const published = new Date(post.date + 'T12:00:00Z').toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+<BaseLayout
+  title={post.metaTitle}
+  description={post.metaDescription}
+  path={post.url}
+  ogImage={post.image}
+  ogType="article"
+>
+  <Breadcrumbs items={crumbs} />
+
+  <article class="post-wrap">
+    <p class="post-date">Published {published}</p>
+    <img
+      class="post-hero"
+      src={post.image}
+      alt={post.imageAlt}
+      width={post.imageWidth}
+      height={post.imageHeight}
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="post-body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post-wrap { max-width: 840px; margin: 0 auto; padding: 28px 16px 56px; }
+  .post-date { font-size: .82rem; color: #8a7a63; margin: 0 0 14px; }
+  .post-hero { width: 100%; height: auto; border-radius: 10px; }
+  .post-body { margin-top: 26px; }
+  .post-body :global(h1) { font-size: 1.85rem; line-height: 1.25; margin: 0 0 14px; }
+  .post-body :global(h2) { font-size: 1.3rem; margin: 30px 0 10px; }
+  .post-body :global(h3) { font-size: 1.08rem; margin: 22px 0 8px; }
+  .post-body :global(p) { margin: 0 0 14px; line-height: 1.75; }
+  .post-body :global(ul), .post-body :global(ol) { margin: 0 0 14px; padding-left: 22px; }
+  .post-body :global(li) { margin-bottom: 6px; line-height: 1.65; }
+  .post-body :global(a) { color: #b0703c; text-decoration: underline; }
+</style>
