@@ -878,3 +878,18 @@ a:hover { color: var(--blue-light); }
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------------------------------------------------------------------
+   Mobile form usability: iOS Safari zooms the viewport whenever a focused
+   form control has font-size < 16px, and never zooms back out afterwards.
+   Our quote forms are the conversion path, so force 16px on phones.
+   !important is required to beat Astro component-scoped rules, which
+   carry a [data-astro-cid-*] attribute and so outrank a plain selector.
+   --------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
