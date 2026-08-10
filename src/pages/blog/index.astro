@@ -2,10 +2,23 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { BLOG_POSTS } from '../../lib/blog';
+import { breadcrumbs, collectionPage } from '../../lib/schema';
 
 const crumbs = [
   { label: 'Home', href: '/' },
   { label: 'Blog' },
+];
+
+// collectionPage() only reads name and url off each item, so the post list
+// satisfies it without needing to be Products.
+const schema = [
+  collectionPage(
+    '/blog/',
+    'Inserts Hub Blog',
+    'Guides on molded pulp, foam, divider and corrugated inserts.',
+    BLOG_POSTS.map((p) => ({ name: p.title, url: p.url })) as any,
+  ),
+  breadcrumbs(crumbs),
 ];
 
 const fmt = (iso: string) =>
@@ -20,6 +33,7 @@ const fmt = (iso: string) =>
   title="Blog | Inserts Hub"
   description="Guides on molded pulp, foam, divider and corrugated inserts, from cavity design to transit testing for packaging buyers."
   path="/blog/"
+  schema={schema}
 >
   <Breadcrumbs items={crumbs} />
 
