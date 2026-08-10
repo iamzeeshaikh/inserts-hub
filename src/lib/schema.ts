@@ -146,6 +146,30 @@ export function blogPosting(post: {
   };
 }
 
+/**
+ * Generic page node. The static pages carried only a BreadcrumbList, so
+ * nothing tied the URL to the site or the business. `type` narrows it where
+ * schema.org has a better fit than plain WebPage.
+ */
+export function webPage(input: {
+  path: string;
+  name: string;
+  description: string;
+  type?: 'WebPage' | 'AboutPage';
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': input.type ?? 'WebPage',
+    '@id': `${site.origin}${input.path}#webpage`,
+    url: `${site.origin}${input.path}`,
+    name: input.name,
+    description: input.description,
+    isPartOf: { '@id': `${site.origin}/#website` },
+    about: { '@id': `${site.origin}/#organization` },
+    inLanguage: 'en-US',
+  };
+}
+
 export function contactPage(path: string, name: string) {
   return {
     '@context': 'https://schema.org',
