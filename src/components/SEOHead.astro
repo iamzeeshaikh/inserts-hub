@@ -1,6 +1,7 @@
 ---
 import { site } from '../lib/site';
 import { isPreview } from '../lib/env';
+import { organization, website } from '../lib/schema';
 
 export interface Props {
   title: string;
@@ -27,6 +28,12 @@ if (!path.startsWith('/') || !path.endsWith('/')) {
 const canonical = `${site.origin}${path}`;
 const image = ogImage ? new URL(ogImage, site.origin).href : `${site.origin}/images/site/Inserts-Hub-logo.png`;
 const robots = noindex || isPreview ? 'noindex,nofollow' : 'index,follow';
+
+/* Organization and WebSite belong on every route so the `#organization` and
+   `#website` nodes that Product, CollectionPage, ContactPage and BlogPosting
+   reference by @id resolve everywhere, not only on the homepage. Pages pass
+   just their own page-specific graphs. */
+const graphs = [organization(), website(), ...schema];
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -52,6 +59,6 @@ const robots = noindex || isPreview ? 'noindex,nofollow' : 'index,follow';
 <link rel="preload" href="/fonts/adlam-display-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 <link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
-{schema.map((entry) => (
+{graphs.map((entry) => (
   <script is:inline type="application/ld+json" set:html={JSON.stringify(entry)} />
 ))}

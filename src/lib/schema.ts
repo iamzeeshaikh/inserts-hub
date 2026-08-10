@@ -115,6 +115,37 @@ export function faqPage(faqs: Faq[]) {
   };
 }
 
+/**
+ * Article schema for the blog. Every value comes from the post's frontmatter,
+ * which is what the page renders. Posts carry no byline, so the organisation
+ * is author as well as publisher.
+ */
+export function blogPosting(post: {
+  title: string;
+  metaDescription: string;
+  url: string;
+  image: string;
+  date: string;
+}) {
+  const published = `${post.date}T12:00:00Z`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${site.origin}${post.url}#article`,
+    headline: post.title,
+    description: post.metaDescription,
+    url: `${site.origin}${post.url}`,
+    image: new URL(post.image, site.origin).href,
+    datePublished: published,
+    dateModified: published,
+    inLanguage: 'en-US',
+    author: { '@id': `${site.origin}/#organization` },
+    publisher: { '@id': `${site.origin}/#organization` },
+    isPartOf: { '@id': `${site.origin}/#website` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${site.origin}${post.url}` },
+  };
+}
+
 export function contactPage(path: string, name: string) {
   return {
     '@context': 'https://schema.org',

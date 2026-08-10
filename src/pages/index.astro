@@ -5,7 +5,7 @@ import ProductGrid from '../components/ProductGrid.astro';
 import InquiryForm from '../components/InquiryForm.astro';
 import CTASection from '../components/CTASection.astro';
 import { site, homeProducts } from '../lib/site';
-import { organization, website, collectionPage } from '../lib/schema';
+import { collectionPage } from '../lib/schema';
 
 /**
  * Section order: hero slider (built from the supplied Elementor slide
@@ -19,7 +19,7 @@ import { organization, website, collectionPage } from '../lib/schema';
   title="Custom Inserts | Foam, Cardboard & More - Inserts Hub"
   description="Shop wholesale custom inserts for all your packaging needs at Inserts Hub. From foam inserts and cardboard dividers, we deal in all."
   path="/"
-  schema={[organization(), website(), collectionPage('/', 'Inserts Hub', 'Custom packaging inserts at wholesale prices.', homeProducts)]}
+  schema={[collectionPage('/', 'Inserts Hub', 'Custom packaging inserts at wholesale prices.', homeProducts)]}
 >
   <HeroSlider />
 

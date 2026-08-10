@@ -7,7 +7,7 @@ import CTASection from '../components/CTASection.astro';
 import { Image } from 'astro:assets';
 import { pages, type Page } from '../lib/site';
 import { asset } from '../lib/images';
-import { breadcrumbs, contactPage, organization } from '../lib/schema';
+import { breadcrumbs, contactPage } from '../lib/schema';
 
 /**
  * The static WordPress pages, at their original slugs. `/refund_returns/` keeps
@@ -22,7 +22,8 @@ const crumbs = [{ label: 'Home', href: '/' }, { label: page.h1 }];
 // The live thank-you page pairs its heading with a green tick.
 const confirmation = page.slug === 'thank-you' ? asset('/images/site/check-mark-green.jpg') : null;
 const schema: unknown[] = [breadcrumbs(crumbs)];
-if (page.slug === 'contact-us') schema.push(organization(), contactPage(page.url, page.title));
+// Organization comes from SEOHead on every route.
+if (page.slug === 'contact-us') schema.push(contactPage(page.url, page.title));
 ---
 <BaseLayout
   title={page.title}

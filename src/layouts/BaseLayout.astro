@@ -22,10 +22,11 @@ const props = Astro.props;
       <slot />
     </main>
     <SiteFooter />
-    {/* ZeeOps live chat. Loaded last and deferred so it never blocks render.
-        Conversations land in the dashboard at chat.zeeops.dev under the
-        `insertshub` site. */}
-    <script src="https://chat.zeeops.dev/widget.js?siteId=insertshub" defer is:inline></script>
+    {/* ZeeOps live chat, deferred to the first interaction (or 6s after load)
+        so its 23KB and its site-config request never compete with the page's
+        own LCP. See public/chat-loader.js. Conversations land in the dashboard
+        at chat.zeeops.dev under the `insertshub` site. */}
+    <script src="/chat-loader.js" defer></script>
       <WhatsAppButton />
   </body>
 </html>
